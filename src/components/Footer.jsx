@@ -93,13 +93,13 @@ export default function Footer() {
           <div className="inline-block w-full max-w-[220px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[380px]">
             <img
               src="/logo-new.png"
-              alt="Treasure Island International School"
+              alt="Treasure Iland International School"
               className="h-14 w-full min-h-[56px] object-contain object-left bg-white/95 p-2 rounded-xl shadow-sm sm:h-16 sm:p-2.5 md:h-[4.5rem] md:p-3 lg:h-20"
             />
           </div>
 
           <p className="text-gray-300 text-sm leading-relaxed mt-4 sm:mt-5">
-            Treasure Island International School provides high quality CBSE
+            Treasure Iland International School provides high quality CBSE
             education focusing on academic excellence, innovation and
             character development.
           </p>
@@ -147,7 +147,7 @@ export default function Footer() {
 
             <div className="flex gap-3">
               <HiLocationMarker className="text-[#3CB5E5] text-lg mt-1" />
-              <p>Ayanavaram, Chennai, Tamil Nadu</p>
+              <p>Vishwanathapuram, Shencottai, Tamil Nadu</p>
             </div>
 
             <div className="flex gap-3">
@@ -189,7 +189,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-gray-400 text-center md:text-left">
 
           <p>
-            © {new Date().getFullYear()} Treasure Island International School
+            © {new Date().getFullYear()} Treasure Iland International School
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">

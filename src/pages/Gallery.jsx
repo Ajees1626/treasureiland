@@ -97,7 +97,7 @@ export default function Gallery() {
               transition={{ delay: 0.15, duration: 0.5 }}
               className="mx-auto mt-6 max-w-2xl text-lg text-white/95"
             >
-              Glimpses of life at Treasure Island — events, campus and learning in action.
+              Glimpses of life at Treasure Iland — events, campus and learning in action.
             </motion.p>
           </div>
         </div>

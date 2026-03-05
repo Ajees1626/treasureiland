@@ -7,7 +7,7 @@ export default function AboutHero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            'url(https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920)',
+            'url(https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200)',
         }}
       />
       <div
@@ -33,7 +33,7 @@ export default function AboutHero() {
             transition={{ delay: 0.15, duration: 0.5 }}
             className="mx-auto mt-6 max-w-2xl text-lg text-white/95"
           >
-            Nurturing minds and building character at Treasure Island International School.
+            Nurturing minds and building character at Treasure Iland International School.
           </motion.p>
         </div>
       </div>

@@ -1,49 +1,111 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion"
+import { HiOutlineChatAlt2 } from "react-icons/hi"
 
 export default function CorrespondentMessage() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20">
-      <div className="absolute -right-20 bottom-1/4 h-80 w-80 rounded-full bg-[#2457A7]/5 blur-3xl" />
-      <motion.div
-        initial={{ opacity: 0, y: 32 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
-      >
-        <h2 className="text-center text-3xl font-bold text-[#2457A7] sm:text-4xl">
-          Meet the Correspondent
-        </h2>
-        <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#1B93D1]" />
-        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16 lg:items-center">
-          <div className="order-2 lg:order-1">
-            <p className="text-lg italic leading-relaxed text-gray-700">
-              &ldquo;As Correspondent, I ensure that our institution stays true to
-              its mission while adapting to the changing needs of education and
-              society.&rdquo;
-            </p>
-            <p className="mt-6 leading-relaxed text-gray-600">
-              We work closely with the management, principal, and faculty to
-              maintain high standards and transparency. Parent partnership and
-              community trust are at the heart of everything we do.
-            </p>
-            <div className="mt-8">
-              <p className="font-semibold text-[#2457A7]">Correspondent Name</p>
-              <p className="text-sm text-gray-500">
-                Correspondent, Treasure Island School
-              </p>
-            </div>
-          </div>
-          <div className="relative order-1 overflow-hidden rounded-2xl lg:order-2">
+    <section className="relative py-28 bg-gradient-to-b from-[#f7fbff] to-white overflow-hidden">
+
+      {/* Background Glow */}
+      <div className="absolute top-10 left-10 w-96 h-96 bg-[#1B93D1]/10 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#2457A7]/10 blur-[120px] rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* Section Heading */}
+        <motion.div
+          initial={{ opacity:0, y:40 }}
+          whileInView={{ opacity:1, y:0 }}
+          viewport={{ once:true }}
+          transition={{ duration:.7 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1f3c88]">
+            Message from the Correspondent
+          </h2>
+
+          <div className="mx-auto mt-4 w-20 h-[4px] bg-[#1B93D1] rounded-full"></div>
+
+          <p className="mt-6 max-w-2xl mx-auto text-gray-600 text-lg">
+            Leadership and guidance that shape the vision and direction of our institution.
+          </p>
+        </motion.div>
+
+
+        {/* Content */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* Image Side */}
+          <motion.div
+            initial={{ opacity:0, x:-60 }}
+            whileInView={{ opacity:1, x:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:.8 }}
+            className="relative group"
+          >
+
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#2457A7] to-[#1B93D1] opacity-20 blur-xl"></div>
+
             <img
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800"
               alt="Correspondent"
-              className="h-[400px] w-full object-cover"
-              loading="lazy"
+              className="relative w-full h-[460px] object-cover rounded-3xl shadow-xl transition duration-700 group-hover:scale-105"
             />
-          </div>
+
+          </motion.div>
+
+
+          {/* Message Side */}
+          <motion.div
+            initial={{ opacity:0, x:60 }}
+            whileInView={{ opacity:1, x:0 }}
+            viewport={{ once:true }}
+            transition={{ duration:.8 }}
+            className="relative"
+          >
+
+            {/* Quote Icon */}
+            <motion.div
+              animate={{ y:[0,-8,0] }}
+              transition={{ repeat:Infinity, duration:3 }}
+              className="w-16 h-16 flex items-center justify-center rounded-xl bg-[#2457A7] text-white shadow-lg mb-6"
+            >
+              <HiOutlineChatAlt2 className="w-8 h-8"/>
+            </motion.div>
+
+
+            <blockquote className="text-2xl italic text-[#2457A7] font-medium leading-relaxed">
+              “As Correspondent, I ensure that our institution stays true to
+              its mission while adapting to the evolving needs of modern
+              education and society.”
+            </blockquote>
+
+            <p className="mt-6 text-gray-600 leading-relaxed text-lg">
+              We work closely with the management, principal, and faculty
+              to maintain excellence in academics, discipline, and
+              transparency. Our strong partnership with parents and the
+              community plays a vital role in shaping the future of our
+              students.
+            </p>
+
+            {/* Signature */}
+            <div className="mt-10 border-t pt-6">
+
+              <p className="text-xl font-semibold text-[#2457A7]">
+                Correspondent Name
+              </p>
+
+              <p className="text-gray-500">
+                Correspondent  
+                <br />
+                Treasure Iland International School
+              </p>
+
+            </div>
+
+          </motion.div>
+
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }

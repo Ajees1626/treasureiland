@@ -44,7 +44,7 @@ export default function CampusVisit() {
               </div>
               <div className="flex items-center gap-3 text-gray-700">
                 <HiLocationMarker className="h-5 w-5 shrink-0 text-[#2457A7]" />
-                <span>Ayanavaram, Chennai – Contact office for exact address</span>
+                <span>Vishwanathapuram, Shencottai – Contact office for exact address</span>
               </div>
             </div>
             <Link

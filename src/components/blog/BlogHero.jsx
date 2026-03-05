@@ -33,7 +33,7 @@ export default function BlogHero() {
             transition={{ delay: 0.15, duration: 0.5 }}
             className="mx-auto mt-6 max-w-2xl text-lg text-white/95"
           >
-            Latest updates, news and event highlights from Treasure Island.
+            Latest updates, news and event highlights from Treasure Iland.
           </motion.p>
         </div>
       </div>

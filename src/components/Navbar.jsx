@@ -28,7 +28,7 @@ export default function Navbar() {
         <NavLink to="/" className="flex items-center shrink-0">
           <img
             src="/logo-new.png"
-            alt="Treasure Island International School"
+            alt="Treasure Iland International School"
             className="h-12 w-auto object-contain sm:h-14"
           />
         </NavLink>

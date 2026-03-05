@@ -1,63 +1,151 @@
-import { motion } from 'framer-motion'
-import { HiLightBulb, HiFlag } from 'react-icons/hi'
+import { motion } from "framer-motion"
+import { HiLightBulb, HiFlag } from "react-icons/hi"
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3
+    }
+  }
+}
+
+const item = {
+  hidden: { opacity: 0, y: 60 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut"
+    }
+  }
+}
 
 export default function VisionMission() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 0h60v60H0z\' fill=\'none\'/%3E%3Cpath d=\'M30 0v60M0 30h60\' stroke=\'%232457A7\' stroke-opacity=\'0.04\' stroke-width=\'0.5\' fill=\'none\'/%3E%3C/svg%3E')]" />
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
-      >
-        <h2 className="text-center text-3xl font-bold text-[#2457A7] sm:text-4xl">
-          Mission & Vision
-        </h2>
-        <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#1B93D1]" />
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
+    <section className="relative py-28 bg-gradient-to-b from-white to-[#f2f7ff] overflow-hidden">
+
+      {/* background shapes */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#1B93D1]/10 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#2457A7]/10 blur-[120px] rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity:0, y:40 }}
+          whileInView={{ opacity:1, y:0 }}
+          viewport={{ once:true }}
+          transition={{ duration:0.8 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1f3c88]">
+            Vision & Mission
+          </h2>
+
+          <div className="mx-auto mt-4 w-20 h-[4px] bg-[#1B93D1] rounded-full"></div>
+
+          <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
+            Our guiding philosophy shapes how we educate, inspire and empower
+            every student to reach their fullest potential.
+          </p>
+        </motion.div>
+
+        {/* Cards */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once:true }}
+          className="grid lg:grid-cols-2 gap-14"
+        >
+
+          {/* Vision */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="rounded-2xl border border-[#94DCF2]/40 bg-[#f8fbff] p-8 shadow-sm"
+            variants={item}
+            className="group relative overflow-hidden rounded-3xl shadow-xl"
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-linear-to-br from-[#2457A7] to-[#1B93D1] text-white">
-              <HiLightBulb className="h-7 w-7" />
+
+            {/* image */}
+            <img
+              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200"
+              className="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110"
+            />
+
+            {/* overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-[#1B93D1]/40"></div>
+
+            <div className="relative p-12">
+
+              {/* floating icon */}
+              <motion.div
+                animate={{ y:[0,-8,0] }}
+                transition={{ repeat:Infinity, duration:3 }}
+                className="w-16 h-16 flex items-center justify-center rounded-xl bg-[#2457A7] text-white shadow-lg"
+              >
+                <HiLightBulb className="w-8 h-8"/>
+              </motion.div>
+
+              <h3 className="mt-6 text-3xl font-bold text-[#2457A7]">
+                Our Vision
+              </h3>
+
+              <p className="mt-4 text-gray-700 leading-relaxed text-lg">
+                To be a leading institution that nurtures confident,
+                creative and responsible global citizens through
+                excellence in education, innovation and strong values.
+              </p>
+
             </div>
-            <h3 className="mt-6 text-xl font-semibold text-[#2457A7]">
-              Our Vision
-            </h3>
-            <p className="mt-4 leading-relaxed text-gray-600">
-              To be a leading institution that nurtures confident, creative,
-              and responsible global citizens through excellence in education,
-              innovation, and values.
-            </p>
+
           </motion.div>
+
+
+          {/* Mission */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="rounded-2xl border border-[#94DCF2]/40 bg-[#f8fbff] p-8 shadow-sm"
+            variants={item}
+            className="group relative overflow-hidden rounded-3xl shadow-xl"
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-linear-to-br from-[#2457A7] to-[#1B93D1] text-white">
-              <HiFlag className="h-7 w-7" />
+
+            {/* image */}
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200"
+              className="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110"
+            />
+
+            {/* overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-[#2457A7]/40"></div>
+
+            <div className="relative p-12">
+
+              <motion.div
+                animate={{ y:[0,-8,0] }}
+                transition={{ repeat:Infinity, duration:3 }}
+                className="w-16 h-16 flex items-center justify-center rounded-xl bg-[#1B93D1] text-white shadow-lg"
+              >
+                <HiFlag className="w-8 h-8"/>
+              </motion.div>
+
+              <h3 className="mt-6 text-3xl font-bold text-[#2457A7]">
+                Our Mission
+              </h3>
+
+              <p className="mt-4 text-gray-700 leading-relaxed text-lg">
+                To provide a safe, inclusive and stimulating learning
+                environment where students grow academically, socially
+                and morally through quality teaching, modern facilities
+                and strong partnerships with parents.
+              </p>
+
             </div>
-            <h3 className="mt-6 text-xl font-semibold text-[#2457A7]">
-              Our Mission
-            </h3>
-            <p className="mt-4 leading-relaxed text-gray-600">
-              To provide a safe, inclusive, and stimulating learning environment
-              where every student achieves their potential through quality
-              teaching, modern infrastructure, and strong partnerships with
-              parents and the community.
-            </p>
+
           </motion.div>
-        </div>
-      </motion.div>
+
+        </motion.div>
+
+      </div>
     </section>
   )
 }

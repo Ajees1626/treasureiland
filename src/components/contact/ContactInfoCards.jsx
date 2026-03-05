@@ -5,7 +5,7 @@ const cards = [
   {
     icon: HiLocationMarker,
     title: 'School Address',
-    description: 'Ayanavaram, Chennai – Tamil Nadu. (Contact office for full address)',
+    description: 'Vishwanathapuram, Shencottai – Tamil Nadu. (Contact office for full address)',
   },
   {
     icon: HiPhone,

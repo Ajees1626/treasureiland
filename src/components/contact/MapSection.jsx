@@ -18,7 +18,7 @@ export default function MapSection() {
           </h2>
           <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#1B93D1]" />
           <p className="mx-auto mt-4 max-w-2xl text-gray-600">
-            Visit us at our campus in Ayanavaram, Chennai. Replace the embed URL below with your school&apos;s Google Map link.
+            Visit us at our campus in Vishwanathapuram, Shencottai. Replace the embed URL below with your school&apos;s Google Map link.
           </p>
         </motion.div>
         <motion.div

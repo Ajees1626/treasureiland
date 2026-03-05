@@ -1,42 +1,44 @@
-import { useRef } from 'react'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import Slider from 'react-slick'
-import { motion } from 'framer-motion'
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
+import { useRef } from "react"
+import Slider from "react-slick"
+import { motion } from "framer-motion"
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi"
+
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 const activities = [
   {
-    title: 'Clubs & Societies',
-    desc: 'Students explore science clubs, debate societies, robotics and creative thinking communities.',
-    image: '/images/activities/club.jpg',
+    title: "Clubs & Societies",
+    desc: "Students explore science clubs, robotics, debate and creative communities.",
+    image: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200",
   },
   {
-    title: 'Music & Arts',
-    desc: 'Encouraging creativity through music, painting, dance and theatre performances.',
-    image: '/images/activities/music.jpg',
+    title: "Music & Arts",
+    desc: "Creativity flourishes through music, painting, dance and theatre.",
+    image: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200",
   },
   {
-    title: 'Sports & Fitness',
-    desc: 'Football, basketball, athletics and fitness programs that build teamwork and discipline.',
-    image: '/images/activities/sports.jpg',
+    title: "Sports & Fitness",
+    desc: "Football, athletics and fitness programs building teamwork.",
+    image: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200",
   },
   {
-    title: 'Leadership Programs',
-    desc: 'Programs that develop leadership, responsibility and confidence among students.',
-    image: '/images/activities/leadership.jpg',
+    title: "Leadership Programs",
+    desc: "Programs that nurture confidence, leadership and responsibility.",
+    image: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1200",
   },
 ]
 
 export default function CurricularActivities() {
+
   const sliderRef = useRef(null)
 
   const settings = {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 4000,
-    speed: 800,
+    autoplaySpeed: 4500,
+    speed: 900,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
@@ -53,67 +55,99 @@ export default function CurricularActivities() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#f3f7fd] py-20">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white to-[#f4f8ff]">
+
+      {/* Background Blur Effects */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[#3CB5E5]/20 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#2457A7]/20 blur-[120px] rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto px-6 relative">
+
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: .7 }}
           viewport={{ once: true }}
-          className="mb-14 text-center"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-[#1f3c88] md:text-4xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1f3c88]">
             Curricular Activities
           </h2>
-          <div className="mx-auto mt-3 h-[3px] w-16 rounded-full bg-[#1B93D1]" />
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-gray-600 md:text-base">
+
+          <div className="mx-auto mt-4 w-20 h-[4px] bg-[#1B93D1] rounded-full"></div>
+
+          <p className="mt-6 max-w-2xl mx-auto text-gray-600 text-lg">
             Learning goes beyond classrooms. Our students participate in creative,
-            athletic and leadership programs that build confidence and skills.
+            athletic and leadership programs that shape their future.
           </p>
         </motion.div>
 
-        {/* Manual arrows + Slider */}
+        {/* Slider */}
         <div className="relative">
+
+          {/* Left Arrow */}
           <button
-            type="button"
             onClick={() => sliderRef.current?.slickPrev()}
-            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-2 rounded-full bg-[#2457A7] p-2.5 text-white shadow-lg transition hover:bg-[#1B93D1] sm:-translate-x-4 sm:p-3"
-            aria-label="Previous slide"
+            className="absolute -left-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl p-3 rounded-full hover:bg-[#2457A7] hover:text-white transition"
           >
-            <HiChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+            <HiChevronLeft size={24}/>
           </button>
+
+          {/* Right Arrow */}
           <button
-            type="button"
             onClick={() => sliderRef.current?.slickNext()}
-            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-2 rounded-full bg-[#2457A7] p-2.5 text-white shadow-lg transition hover:bg-[#1B93D1] sm:translate-x-4 sm:p-3"
-            aria-label="Next slide"
+            className="absolute -right-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl p-3 rounded-full hover:bg-[#2457A7] hover:text-white transition"
           >
-            <HiChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+            <HiChevronRight size={24}/>
           </button>
 
           <Slider ref={sliderRef} {...settings}>
-          {activities.map((item, index) => (
-            <div key={index} className="px-3">
-              <motion.div
-                whileHover={{ y: -6 }}
-                className="group relative overflow-hidden rounded-2xl shadow-xl"
-              >
-                {/* Image */}
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="h-[320px] w-full object-cover transition duration-700 group-hover:scale-110"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                {/* Content */}
-                <div className="absolute bottom-0 p-6 text-white">
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-sm text-gray-200">{item.desc}</p>
-                </div>
-              </motion.div>
-            </div>
-          ))}
+
+            {activities.map((item, i) => (
+
+              <div key={i} className="px-4">
+
+                <motion.div
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.2 }}
+                  viewport={{ once: true }}
+                  className="group relative rounded-3xl overflow-hidden shadow-xl cursor-pointer"
+                >
+
+                  {/* Image */}
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-[360px] w-full object-cover transition duration-700 group-hover:scale-110"
+                  />
+
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+
+                  {/* Glass Card Content */}
+                  <div className="absolute bottom-0 p-6 text-white backdrop-blur-md">
+
+                    <h3 className="text-2xl font-semibold mb-2">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-sm text-gray-200 leading-relaxed">
+                      {item.desc}
+                    </p>
+
+                  </div>
+
+                  {/* Hover Glow */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 border-2 border-[#1B93D1] rounded-3xl"></div>
+
+                </motion.div>
+
+              </div>
+
+            ))}
+
           </Slider>
         </div>
       </div>

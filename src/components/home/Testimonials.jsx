@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 const testimonials = [
   {
-    quote: 'Treasure Island helped us scale our online presence. Professional and results-driven.',
+    quote: 'Treasure Iland International School has been a great choice. Professional and nurturing environment.',
     author: 'Client A',
     role: 'Marketing Head',
     initial: 'A',

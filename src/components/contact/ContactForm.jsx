@@ -206,7 +206,7 @@ export default function ContactForm() {
                 <div>
                   <p className="font-medium text-gray-800">Address</p>
                   <p className="text-gray-600">
-                    Ayanavaram, Chennai – Tamil Nadu
+                    Vishwanathapuram, Shencottai – Tamil Nadu
                     <br />
                     <span className="text-sm">(Contact office for full address)</span>
                   </p>
