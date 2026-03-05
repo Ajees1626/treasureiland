@@ -1,0 +1,50 @@
+[
+  {
+    "id": "academic-excellence",
+    "icon": "HiTrophy",
+    "title": "Academic Excellence",
+    "description": "Consistent board results and a curriculum designed for deep understanding and application.",
+    "details": "Our school has a proven track record of academic excellence with students consistently achieving top results in board examinations. We follow a curriculum that emphasises deep understanding, critical thinking, and real-world application. Dedicated teachers and structured support ensure every child reaches their potential.",
+    "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800"
+  },
+  {
+    "id": "experienced-faculty",
+    "icon": "HiUserGroup",
+    "title": "Experienced Faculty",
+    "description": "Qualified, trained teachers who understand child development and modern pedagogy.",
+    "details": "Our faculty comprises qualified, trained educators who understand child development and modern pedagogy. They bring years of experience and continuous professional development to the classroom. Every teacher is committed to nurturing not just academic success but also character and confidence.",
+    "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800"
+  },
+  {
+    "id": "safe-transport",
+    "icon": "HiHome",
+    "title": "Safe Transport",
+    "description": "GPS-enabled buses, trained drivers, and strict safety protocols for every commute.",
+    "details": "Student safety is our priority. Our transport fleet is GPS-enabled with trained drivers and strict safety protocols for every commute. Routes are planned for efficiency and safety, with regular vehicle maintenance and monitoring to ensure peace of mind for parents.",
+    "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800"
+  },
+  {
+    "id": "smart-classrooms",
+    "icon": "HiDesktopComputer",
+    "title": "Smart Classrooms",
+    "description": "Digital boards and technology-aided learning for an engaging, future-ready experience.",
+    "details": "Our smart classrooms are equipped with digital boards and technology-aided learning tools. We believe in an engaging, future-ready experience that combines traditional teaching with modern resources. Students learn to use technology responsibly while gaining 21st-century skills.",
+    "image": "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800"
+  },
+  {
+    "id": "modern-infrastructure",
+    "icon": "HiOfficeBuilding",
+    "title": "Modern Infrastructure",
+    "description": "Spacious campus, labs, library, and sports facilities that support holistic growth.",
+    "details": "Our campus features spacious classrooms, well-equipped labs, a resourceful library, and sports facilities that support holistic growth. Every space is designed to inspire learning, creativity, and physical well-being in a safe and welcoming environment.",
+    "image": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800"
+  },
+  {
+    "id": "holistic-development",
+    "icon": "HiLightBulb",
+    "title": "Holistic Development",
+    "description": "Academics, sports, arts, values, and leadership—all under one roof.",
+    "details": "We believe in holistic development: academics, sports, arts, values, and leadership programmes all under one roof. Our students are encouraged to explore their interests, build character, and develop into confident, responsible individuals ready for the future.",
+    "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800"
+  }
+]

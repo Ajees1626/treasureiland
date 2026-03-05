@@ -1,0 +1,91 @@
+{
+  "news": [
+    {
+      "id": "news-1",
+      "title": "Annual Day 2026 Highlights",
+      "date": "15 Feb 2026",
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800",
+      "description": "A memorable evening of performances and celebrations.",
+      "details": "The Annual Day 2026 was a grand success with dance, music and drama. Chief Guest praised our focus on holistic development. Over 450 students participated."
+    },
+    {
+      "id": "news-2",
+      "title": "Science Exhibition Winners",
+      "date": "10 Feb 2026",
+      "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800",
+      "description": "Our students shine at the inter-school science exhibition.",
+      "details": ""
+    },
+    {
+      "id": "news-3",
+      "title": "New Smart Classrooms Inaugurated",
+      "date": "5 Feb 2026",
+      "image": "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800",
+      "description": "Digital boards and tech-aided learning now in all sections.",
+      "details": "The school has upgraded all classrooms with smart boards and high-speed connectivity. Teachers have been trained to use the new tools effectively."
+    },
+    {
+      "id": "news-4",
+      "title": "Sports Day 2026",
+      "date": "28 Jan 2026",
+      "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800",
+      "description": "Annual sports meet saw record participation.",
+      "details": ""
+    },
+    {
+      "id": "news-5",
+      "title": "Parent-Teacher Meet",
+      "date": "20 Jan 2026",
+      "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800",
+      "description": "Successful PTM held for all classes."
+    },
+    {
+      "id": "news-6",
+      "title": "Library Week Celebration",
+      "date": "12 Jan 2026",
+      "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800",
+      "description": "Book readings, quizzes and author talks during Library Week.",
+      "details": "Students participated in reading challenges and met a local author. The library has added 500 new titles this year."
+    }
+  ],
+  "events": [
+    {
+      "id": "event-1",
+      "title": "Annual Day Celebration 2026",
+      "date": "12 Feb 2026",
+      "thumbnail": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600",
+      "images": [
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200",
+        "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=1200",
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200"
+      ],
+      "videos": [],
+      "details": "Annual Day 2026 brought together students, parents and dignitaries for an evening of culture, talent and recognition. Theme: Roots and Wings. Chief Guest addressed the gathering and distributed awards."
+    },
+    {
+      "id": "event-2",
+      "title": "Science Fair 2026",
+      "date": "8 Feb 2026",
+      "thumbnail": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=600",
+      "images": [
+        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1200",
+        "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200"
+      ],
+      "videos": [],
+      "details": "Inter-school science exhibition with working models and experiments. Our students won prizes in Physics, Chemistry and Biology categories."
+    },
+    {
+      "id": "event-3",
+      "title": "Sports Meet 2026",
+      "date": "25 Jan 2026",
+      "thumbnail": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600",
+      "images": [
+        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200",
+        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200",
+        "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200"
+      ],
+      "videos": [],
+      "details": "Annual sports day with track and field events, team games and march past. Medals and trophies for winners. Emphasis on participation and sportsmanship."
+    }
+  ]
+}
