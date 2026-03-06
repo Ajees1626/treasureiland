@@ -23,7 +23,7 @@ export default function Navbar() {
   const isAboutActive = aboutDropdown.some((item) => location.pathname === item.to)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#94DCF2]/50 bg-white/95 backdrop-blur">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[color:color-mix(in_srgb,var(--color-accent)_50%,transparent)] bg-white/95 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-2.5 sm:px-6 sm:py-3 lg:px-8" aria-label="Main navigation">
         <NavLink to="/" className="flex items-center shrink-0">
           <img
@@ -39,8 +39,8 @@ export default function Navbar() {
             className={({ isActive }) =>
               `rounded-lg px-3 py-2 text-sm font-medium transition ${
                 isActive
-                  ? 'bg-[#94DCF2]/30 text-[#2457A7]'
-                  : 'text-gray-700 hover:bg-gray-100 hover:text-[#1B93D1]'
+                  ? 'bg-[color:color-mix(in_srgb,var(--color-accent)_18%,white)] text-[var(--color-accent)]'
+                  : 'text-gray-700 hover:bg-gray-100 hover:text-[var(--color-accent)]'
               }`
             }
           >
@@ -55,8 +55,8 @@ export default function Navbar() {
             <span
               className={`flex cursor-pointer items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition ${
                 isAboutActive
-                  ? 'bg-[#94DCF2]/30 text-[#2457A7]'
-                  : 'text-gray-700 hover:bg-gray-100 hover:text-[#1B93D1]'
+                  ? 'bg-[color:color-mix(in_srgb,var(--color-accent)_18%,white)] text-[var(--color-accent)]'
+                  : 'text-gray-700 hover:bg-gray-100 hover:text-[var(--color-accent)]'
               }`}
             >
               About
@@ -71,7 +71,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute left-0 top-full z-50 mt-1 min-w-[200px] rounded-xl border border-[#94DCF2]/40 bg-white py-2 shadow-lg"
+                  className="absolute left-0 top-full z-50 mt-1 min-w-[200px] rounded-xl border border-[color:color-mix(in_srgb,var(--color-accent)_35%,transparent)] bg-white py-2 shadow-lg"
                 >
                   {aboutDropdown.map((item) => (
                     <NavLink
@@ -80,8 +80,8 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         `block px-4 py-2.5 text-sm font-medium transition ${
                           isActive
-                            ? 'bg-[#94DCF2]/20 text-[#2457A7]'
-                            : 'text-gray-700 hover:bg-gray-50 hover:text-[#1B93D1]'
+                            ? 'bg-[color:color-mix(in_srgb,var(--color-accent)_12%,white)] text-[var(--color-accent)]'
+                            : 'text-gray-700 hover:bg-gray-50 hover:text-[var(--color-accent)]'
                         }`
                       }
                     >
@@ -100,11 +100,11 @@ export default function Navbar() {
                 to={link.to}
                 className={({ isActive }) =>
                   isContact
-                    ? 'ml-1 rounded-lg bg-[#2457A7] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1B93D1]'
+                    ? 'ml-1 rounded-lg bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-95'
                     : `rounded-lg px-3 py-2 text-sm font-medium transition ${
                         isActive
-                          ? 'bg-[#94DCF2]/30 text-[#2457A7]'
-                          : 'text-gray-700 hover:bg-gray-100 hover:text-[#1B93D1]'
+                          ? 'bg-[color:color-mix(in_srgb,var(--color-accent)_18%,white)] text-[var(--color-accent)]'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-[var(--color-accent)]'
                       }`
                 }
               >
@@ -141,7 +141,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="relative z-50 overflow-hidden border-t border-[#94DCF2]/50 bg-white lg:hidden"
+              className="relative z-50 overflow-hidden border-t border-[color:color-mix(in_srgb,var(--color-accent)_50%,transparent)] bg-white lg:hidden"
             >
             <div className="flex flex-col gap-0.5 px-4 py-4">
               <NavLink
@@ -149,7 +149,9 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className={({ isActive }) =>
                   `rounded-lg px-4 py-3 font-medium ${
-                    isActive ? 'bg-[#94DCF2]/20 text-[#2457A7]' : 'text-gray-700 hover:bg-gray-100'
+                    isActive
+                      ? 'bg-[color:color-mix(in_srgb,var(--color-accent)_12%,white)] text-[var(--color-accent)]'
+                      : 'text-gray-700 hover:bg-gray-100'
                   }`
                 }
               >
@@ -162,7 +164,9 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className={({ isActive }) =>
                     `rounded-lg px-4 py-3 font-medium ${
-                      isActive ? 'bg-[#94DCF2]/20 text-[#2457A7]' : 'text-gray-700 hover:bg-gray-100'
+                      isActive
+                        ? 'bg-[color:color-mix(in_srgb,var(--color-accent)_12%,white)] text-[var(--color-accent)]'
+                        : 'text-gray-700 hover:bg-gray-100'
                     }`
                   }
                 >
@@ -178,9 +182,11 @@ export default function Navbar() {
                     onClick={() => setMobileOpen(false)}
                     className={({ isActive }) =>
                       isContact
-                        ? 'rounded-lg bg-[#2457A7] px-4 py-3 font-semibold text-white hover:bg-[#1B93D1]'
+                        ? 'rounded-lg bg-[var(--color-accent)] px-4 py-3 font-semibold text-white hover:brightness-95'
                         : `rounded-lg px-4 py-3 font-medium ${
-                            isActive ? 'bg-[#94DCF2]/20 text-[#2457A7]' : 'text-gray-700 hover:bg-gray-100'
+                            isActive
+                              ? 'bg-[color:color-mix(in_srgb,var(--color-accent)_12%,white)] text-[var(--color-accent)]'
+                              : 'text-gray-700 hover:bg-gray-100'
                           }`
                     }
                   >

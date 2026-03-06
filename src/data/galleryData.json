@@ -1,0 +1,45 @@
+{
+  "categories": ["All", "Events", "Campus", "Learning"],
+  "images": [
+    {
+      "src": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200",
+      "alt": "Annual Day Celebration",
+      "category": "Events"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=1200",
+      "alt": "School Assembly",
+      "category": "Campus"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200",
+      "alt": "Classroom Learning",
+      "category": "Learning"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200",
+      "alt": "Sports Day Event",
+      "category": "Events"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200",
+      "alt": "Science Laboratory",
+      "category": "Campus"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200",
+      "alt": "Cultural Program",
+      "category": "Events"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1580582932707-19a4b50308ab?q=80&w=1200",
+      "alt": "School Campus View",
+      "category": "Campus"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1200",
+      "alt": "Group Study",
+      "category": "Learning"
+    }
+  ]
+}

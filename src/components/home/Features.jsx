@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { viewportLite, transitionLite } from "../../utils/scrollMotion"
 
 const features = [
   {
@@ -31,45 +32,46 @@ const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
+      delayChildren: 0.06,
     },
   },
 }
 
 const item = {
-  hidden: { opacity: 0, y: 60 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: transitionLite },
 }
 
 export default function Features() {
   return (
-    <section className="relative py-24 bg-gradient-to-b from-white to-[#f5f9ff] overflow-hidden">
+    <section className="relative py-14 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-b from-white to-[#f5f9ff] overflow-hidden" aria-labelledby="features-heading">
 
       {/* Background Blur Shapes */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#94DCF2]/30 blur-[120px] rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#3CB5E5]/20 blur-[120px] rounded-full"></div>
+      <div className="absolute top-0 left-0 w-48 h-48 sm:w-72 sm:h-72 bg-[color:color-mix(in_srgb,var(--color-accent)_30%,transparent)] blur-[120px] rounded-full" aria-hidden="true"></div>
+      <div className="absolute bottom-0 right-0 w-48 h-48 sm:w-72 sm:h-72 bg-[color:color-mix(in_srgb,var(--color-accent)_20%,transparent)] blur-[120px] rounded-full" aria-hidden="true"></div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
         <motion.div
-          initial={{ opacity:0, y:40 }}
-          whileInView={{ opacity:1, y:0 }}
-          viewport={{ once:true }}
-          transition={{ duration:.7 }}
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportLite}
+          transition={transitionLite}
           className="text-center max-w-3xl mx-auto"
         >
-          <p className="text-[#1B93D1] font-semibold uppercase tracking-widest text-sm">
+          <p className="text-[var(--color-gold)] font-semibold uppercase tracking-widest text-xs sm:text-sm">
             School Highlights
           </p>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#2457A7] mt-3">
+          <h2 id="features-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mt-3">
             A Complete Learning Environment
           </h2>
 
-          <div className="mx-auto mt-4 h-[3px] w-20 bg-[#1B93D1] rounded-full"></div>
+          <div className="mx-auto mt-4 h-[3px] w-20 bg-[var(--color-gold)] rounded-full"></div>
 
-          <p className="mt-6 text-gray-600 text-lg">
+          <p className="mt-4 sm:mt-6 text-gray-600 text-sm sm:text-base lg:text-lg">
             Our school combines academic excellence, technology and
             mentorship to create future leaders.
           </p>
@@ -80,9 +82,8 @@ export default function Features() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          whileHover={{ opacity:1, y:0 }}
-          viewport={{ once:true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-16"
+          viewport={viewportLite}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mt-10 sm:mt-14 md:mt-16"
         >
           {features.map((itemData, i) => (
             <motion.div
@@ -95,7 +96,7 @@ export default function Features() {
               <img
                 src={itemData.image}
                 alt={itemData.title}
-                className="w-full h-80 object-cover transition duration-700 group-hover:scale-110"
+                className="w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover transition duration-700 group-hover:scale-110"
               />
 
               {/* Gradient overlay */}
@@ -104,7 +105,7 @@ export default function Features() {
               {/* Content */}
               <div className="absolute bottom-0 p-6 text-white">
 
-                <h3 className="text-xl font-semibold">
+                <h3 className="text-lg sm:text-xl font-semibold text-gradient">
                   {itemData.title}
                 </h3>
 
@@ -116,7 +117,7 @@ export default function Features() {
                   {itemData.description}
                 </motion.p>
 
-                <div className="mt-4 h-[2px] w-10 bg-[#3CB5E5] transition-all duration-500 group-hover:w-20"></div>
+                <div className="mt-4 h-[2px] w-10 bg-[var(--color-gold)] transition-all duration-500 group-hover:w-20"></div>
 
               </div>
 

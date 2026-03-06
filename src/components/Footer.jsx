@@ -1,24 +1,33 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
-import { HiMail, HiPhone, HiLocationMarker, HiX } from "react-icons/hi"
+import {
+  HiMail,
+  HiPhone,
+  HiLocationMarker,
+  HiX,
+  HiAcademicCap,
+  HiArrowRight,
+} from "react-icons/hi"
 import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter, FaWhatsapp } from "react-icons/fa"
 
-const links = [
+const quickLinks = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About School" },
+  { to: "/about", label: "About Us" },
+  { to: "/mandatory-disclosure", label: "Mandatory Disclosure" },
+  { to: "/teaching-methodology", label: "Teaching Methodology" },
   { to: "/admissions", label: "Admissions" },
-  { to: "/gallery", label: "Gallery" },
   { to: "/blog", label: "News & Events" },
-  { to: "/contact", label: "Contact" }
+  { to: "/gallery", label: "Gallery" },
+  { to: "/contact", label: "Contact" },
 ]
 
 const social = [
-  { icon: FaFacebookF, href: "#" },
-  { icon: FaInstagram, href: "#" },
-  { icon: FaYoutube, href: "#" },
-  { icon: FaTwitter, href: "#" },
-  { icon: FaWhatsapp, href: "#" }
+  { icon: FaFacebookF, href: "#", label: "Facebook" },
+  { icon: FaInstagram, href: "#", label: "Instagram" },
+  { icon: FaYoutube, href: "#", label: "YouTube" },
+  { icon: FaTwitter, href: "#", label: "Twitter" },
+  { icon: FaWhatsapp, href: "#", label: "WhatsApp" },
 ]
 
 function Modal({ title, content, onClose }) {
@@ -27,24 +36,35 @@ function Modal({ title, content, onClose }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md p-4"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
     >
       <motion.div
-        initial={{ y: 30, opacity: 0 }}
+        initial={{ y: 24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        exit={{ opacity: 0 }}
+        exit={{ y: 12, opacity: 0 }}
+        transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
         onClick={(e) => e.stopPropagation()}
-        className="bg-white rounded-xl shadow-xl w-full max-w-xl overflow-hidden"
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden"
       >
-        <div className="flex justify-between items-center px-6 py-4 bg-[#1e3a5f] text-white">
-          <h3 className="font-semibold">{title}</h3>
-          <button onClick={onClose}>
-            <HiX />
+        <div className="flex justify-between items-center px-6 py-4 bg-[var(--color-primary)] text-white">
+          <h3 id="modal-title" className="font-semibold text-lg text-gradient-light">
+            {title}
+          </h3>
+          <button
+            type="button"
+            onClick={onClose}
+            className="p-2 rounded-lg hover:bg-white/20 transition"
+            aria-label="Close"
+          >
+            <HiX className="w-5 h-5" />
           </button>
         </div>
-
-        <div className="p-6 text-gray-600 text-sm whitespace-pre-line">
+        <div className="p-6 text-gray-600 text-sm leading-relaxed whitespace-pre-line max-h-[70vh] overflow-y-auto">
           {content}
         </div>
       </motion.div>
@@ -53,200 +73,190 @@ function Modal({ title, content, onClose }) {
 }
 
 export default function Footer() {
-
   const [termsOpen, setTermsOpen] = useState(false)
   const [privacyOpen, setPrivacyOpen] = useState(false)
+  const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-[#0f2744] text-white mt-20">
+    <footer className="bg-[var(--color-primary)] text-white mt-16 sm:mt-20" role="contentinfo">
+      {/* CTA Strip */}
+      <div className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-accent)] to-[var(--color-gold)] py-10 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+            <div className="flex items-center gap-4 text-center md:text-left">
+              <div className="hidden sm:flex w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm items-center justify-center shrink-0">
+                <HiAcademicCap className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gradient-light">
+                  Admissions Open 2026–27
+                </h2>
+                <p className="text-white/90 text-sm sm:text-base mt-1">
+                  Give your child the best CBSE education and future opportunities.
+                </p>
+              </div>
+            </div>
+            <Link
+              to="/admissions"
+              className="group inline-flex items-center gap-2 bg-white text-[var(--color-primary)] font-semibold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition whitespace-nowrap"
+            >
+              Apply for Admission
+              <HiArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </div>
 
-      {/* Admission CTA */}
-      <div className="bg-gradient-to-r from-[#2457A7] to-[#1B93D1] py-8 sm:py-10 lg:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-
-          <div className="text-center md:text-left">
-            <h2 className="text-xl font-bold sm:text-2xl lg:text-3xl">
-              Admissions Open 2026
-            </h2>
-            <p className="text-white/80 text-sm mt-1">
-              Join our CBSE school and give your child the best education.
+      {/* Main footer content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
+          {/* School info - spans 5 cols on lg */}
+          <div className="lg:col-span-5">
+            <Link to="/" className="inline-block focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[var(--color-primary)] rounded-lg">
+              <img
+                src="/logo-new.png"
+                alt="Treasure Iland International School"
+                className="h-20 sm:h-24 w-auto bg-white p-3 rounded-xl shadow-lg object-contain"
+              />
+            </Link>
+            <p className="text-white/85 text-sm sm:text-base leading-relaxed mt-6 max-w-md">
+              Treasure Iland International School provides quality CBSE education with focus on
+              academic excellence, innovation and character development.
+            </p>
+            <p className="text-white/70 text-xs sm:text-sm mt-4 font-medium">
+              CBSE Affiliation No: 1931016
             </p>
           </div>
 
-          <Link
-            to="/admissions"
-            className="bg-white text-[#2457A7] font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition"
-          >
-            Apply Now
-          </Link>
-
-        </div>
-      </div>
-
-
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16 grid gap-10 sm:gap-12 grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr]">
-
-        {/* School Info - wider column */}
-        <div className="max-w-md w-full">
-
-          <div className="inline-block w-full max-w-[220px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[380px]">
-            <img
-              src="/logo-new.png"
-              alt="Treasure Iland International School"
-              className="h-14 w-full min-h-[56px] object-contain object-left bg-white/95 p-2 rounded-xl shadow-sm sm:h-16 sm:p-2.5 md:h-[4.5rem] md:p-3 lg:h-20"
-            />
+          {/* Quick links - 4 cols */}
+          <div className="lg:col-span-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-gold)] mb-5">
+              Quick Links
+            </h3>
+            <ul className="space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.to}
+                    className="group/link inline-flex items-center gap-2 text-white/90 text-sm hover:text-[var(--color-gold)] transition py-1 rounded focus:outline-none focus:ring-2 focus:ring-[var(--color-gold)] focus:ring-offset-2 focus:ring-offset-[var(--color-primary)]"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-gold)] opacity-0 group-hover/link:opacity-100 transition shrink-0" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <p className="text-gray-300 text-sm leading-relaxed mt-4 sm:mt-5">
-            Treasure Iland International School provides high quality CBSE
-            education focusing on academic excellence, innovation and
-            character development.
-          </p>
-
-          <p className="text-gray-400 text-sm mt-3">
-            CBSE Affiliation No : 1931016
-          </p>
-
-        </div>
-
-
-        {/* Navigation */}
-        <div>
-
-          <h3 className="text-lg font-semibold mb-6">
-            Quick Links
-          </h3>
-
-          <ul className="grid grid-cols-2 gap-y-3 text-gray-300 text-sm">
-
-            {links.map(link => (
-              <li key={link.label}>
-                <Link
-                  to={link.to}
-                  className="hover:text-[#3CB5E5] transition"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-
-          </ul>
-
-        </div>
-
-
-        {/* Contact */}
-        <div>
-
-          <h3 className="text-lg font-semibold mb-6">
-            Contact
-          </h3>
-
-          <div className="space-y-4 text-gray-300 text-sm">
-
-            <div className="flex gap-3">
-              <HiLocationMarker className="text-[#3CB5E5] text-lg mt-1" />
-              <p>Vishwanathapuram, Shencottai, Tamil Nadu</p>
-            </div>
-
-            <div className="flex gap-3">
-              <HiPhone className="text-[#3CB5E5] text-lg mt-1" />
-              <p>+91 8152 8152 81</p>
-            </div>
-
-            <div className="flex gap-3">
-              <HiMail className="text-[#3CB5E5] text-lg mt-1" />
-              <p>info@treasureilandcbseschool.com</p>
-            </div>
-
-          </div>
-
-
-          {/* Social */}
-          <div className="flex gap-3 mt-6">
-
-            {social.map((item,i)=>(
+          {/* Contact - 3 cols */}
+          <div className="lg:col-span-3">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-gold)] mb-5">
+              Contact
+            </h3>
+            <div className="rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-5 sm:p-6 space-y-4">
               <a
-                key={i}
-                href={item.href}
-                className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/10 hover:bg-[#2457A7] transition"
-              >
-                <item.icon/>
-              </a>
-            ))}
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-gray-400 text-center md:text-left">
-
-          <p>
-            © {new Date().getFullYear()} Treasure Iland International School
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-
-            <button
-              onClick={()=>setTermsOpen(true)}
-              className="hover:text-[#3CB5E5]"
-            >
-              Terms
-            </button>
-
-            <button
-              onClick={()=>setPrivacyOpen(true)}
-              className="hover:text-[#3CB5E5]"
-            >
-              Privacy
-            </button>
-
-            <span>
-              Developed by{" "}
-              <a
-                href="https://pixdotsolutions.com"
+                href="https://maps.google.com/?q=Vishwanathapuram+Shencottai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#3CB5E5] hover:underline"
+                className="flex gap-3 items-start text-white/90 hover:text-[var(--color-gold)] transition"
               >
-                Pixdot
+                <HiLocationMarker className="w-5 h-5 text-[var(--color-gold)] shrink-0 mt-0.5" />
+                <span className="text-sm">
+                  Vishwanathapuram, Shencottai, Tamil Nadu
+                </span>
               </a>
-            </span>
-
+              <a
+                href="tel:+918152815281"
+                className="flex gap-3 items-center text-white/90 hover:text-[var(--color-gold)] transition"
+              >
+                <HiPhone className="w-5 h-5 text-[var(--color-gold)] shrink-0" />
+                <span className="text-sm">+91 8152 8152 81</span>
+              </a>
+              <a
+                href="mailto:info@treasureilandcbseschool.com"
+                className="flex gap-3 items-center text-white/90 hover:text-[var(--color-gold)] transition break-all"
+              >
+                <HiMail className="w-5 h-5 text-[var(--color-gold)] shrink-0" />
+                <span className="text-sm">info@treasureilandcbseschool.com</span>
+              </a>
+              <div className="flex flex-wrap gap-2 pt-3 border-t border-white/10">
+                {social.map((item, i) => {
+                  const Icon = item.icon
+                  return (
+                    <a
+                      key={i}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={item.label}
+                      className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/10 text-white/90 hover:bg-[var(--color-gold)] hover:text-[var(--color-primary)] transition"
+                    >
+                      <Icon className="w-4 h-4" />
+                    </a>
+                  )
+                })}
+              </div>
+            </div>
           </div>
-
         </div>
-
       </div>
 
+      {/* Bottom bar */}
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+            <p className="text-white/70 order-2 sm:order-1">
+              © {currentYear} Treasure Iland International School. All rights reserved.
+            </p>
+            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-6 order-1 sm:order-2">
+              <button
+                type="button"
+                onClick={() => setTermsOpen(true)}
+                className="text-white/80 hover:text-[var(--color-gold)] transition underline-offset-2 hover:underline"
+              >
+                Terms of Use
+              </button>
+              <button
+                type="button"
+                onClick={() => setPrivacyOpen(true)}
+                className="text-white/80 hover:text-[var(--color-gold)] transition underline-offset-2 hover:underline"
+              >
+                Privacy Policy
+              </button>
+              <span className="text-white/60">
+                Developed by{" "}
+                <a
+                  href="https://pixdotsolutions.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--color-gold)] hover:underline font-medium"
+                >
+                  Pixdot
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <AnimatePresence>
-
         {termsOpen && (
           <Modal
+            key="terms"
             title="Terms of Use"
             content="Terms content here..."
-            onClose={()=>setTermsOpen(false)}
+            onClose={() => setTermsOpen(false)}
           />
         )}
-
         {privacyOpen && (
           <Modal
+            key="privacy"
             title="Privacy Policy"
             content="Privacy content here..."
-            onClose={()=>setPrivacyOpen(false)}
+            onClose={() => setPrivacyOpen(false)}
           />
         )}
-
       </AnimatePresence>
-
     </footer>
   )
 }

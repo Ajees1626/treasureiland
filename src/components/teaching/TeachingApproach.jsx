@@ -1,93 +1,88 @@
-import { motion } from 'framer-motion'
-import {
-  HiBookOpen,
-  HiLightBulb,
-  HiUserGroup,
-  HiDesktopComputer,
-  HiColorSwatch,
-  HiChartBar,
-} from 'react-icons/hi'
+import { motion } from "framer-motion"
+import { FaUserGraduate, FaChalkboardTeacher, FaSchool, FaTrophy } from "react-icons/fa"
 
-const approaches = [
+const highlights = [
   {
-    icon: HiBookOpen,
-    title: 'Concept-Based Learning',
-    description:
-      'We build understanding through concepts rather than rote learning, so students can apply knowledge across subjects and real-life situations.',
+    icon: <FaUserGraduate />,
+    title: "5000+ Students",
+    desc: "A vibrant community of learners growing academically and personally."
   },
   {
-    icon: HiLightBulb,
-    title: 'Critical Thinking Development',
-    description:
-      'Structured activities and discussions that develop analysis, reasoning, and problem-solving skills from an early age.',
+    icon: <FaChalkboardTeacher />,
+    title: "150+ Faculty",
+    desc: "Experienced educators dedicated to nurturing future leaders."
   },
   {
-    icon: HiUserGroup,
-    title: 'Interactive Classroom Sessions',
-    description:
-      'Dialogue, group work, and hands-on activities keep every child engaged and participating in the learning process.',
+    icon: <FaSchool />,
+    title: "Modern Campus",
+    desc: "World-class infrastructure designed for effective learning."
   },
   {
-    icon: HiDesktopComputer,
-    title: 'Smart Class Technology',
-    description:
-      'Digital boards, multimedia content, and tech tools that make lessons vivid, accessible, and aligned with modern pedagogy.',
-  },
-  {
-    icon: HiColorSwatch,
-    title: 'Activity-Based Learning',
-    description:
-      'Projects, experiments, and creative tasks that reinforce concepts and develop practical and collaborative skills.',
-  },
-  {
-    icon: HiChartBar,
-    title: 'Continuous Assessment System',
-    description:
-      'Regular, varied assessments and feedback so progress is tracked and learning gaps are addressed in time.',
-  },
+    icon: <FaTrophy />,
+    title: "Top Achievements",
+    desc: "Recognized excellence in academics, sports and innovation."
+  }
 ]
 
-export default function TeachingApproach() {
+export default function Highlights() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-[#f8fbff] to-white py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="text-3xl font-bold text-[#2457A7] sm:text-4xl">
-            Core Teaching Approach
+    <section
+      className="relative py-28 px-6 bg-fixed bg-center bg-cover"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1580582932707-520aed937b7b')"
+      }}
+    >
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/70"></div>
+
+      <div className="relative max-w-7xl mx-auto">
+
+        {/* Section Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Our School Highlights
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#1B93D1]" />
-          <p className="mx-auto mt-6 max-w-2xl text-gray-600">
-            A balanced blend of tradition and innovation for lasting learning.
+
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Discover what makes our institution a leading center for
+            education, innovation and student success.
           </p>
-        </motion.div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {approaches.map((item, i) => (
+        </div>
+
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          {highlights.map((item, index) => (
             <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
-              className="rounded-2xl border border-[#94DCF2]/40 bg-white p-6 shadow-sm transition hover:shadow-lg"
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              whileHover={{ scale: 1.05 }}
+              className="backdrop-blur-lg bg-white/10 border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2457A7]/10 text-[#2457A7]">
-                <item.icon className="h-6 w-6" />
+
+              <div className="text-4xl text-yellow-400 mb-4 flex justify-center">
+                {item.icon}
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-[#2457A7]">
+
+              <h3 className="text-xl font-semibold text-gradient-light mb-2">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                {item.description}
+
+              <p className="text-gray-300 text-sm">
+                {item.desc}
               </p>
+
             </motion.div>
           ))}
+
         </div>
+
       </div>
+
     </section>
   )
 }

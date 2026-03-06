@@ -25,13 +25,13 @@ const item = {
 
 export default function VisionMission() {
   return (
-    <section className="relative py-28 bg-gradient-to-b from-white to-[#f2f7ff] overflow-hidden">
+    <section className="relative py-14 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-b from-white to-[#f2f7ff] overflow-hidden" aria-labelledby="vision-mission-heading">
 
       {/* background shapes */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#1B93D1]/10 blur-[120px] rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#2457A7]/10 blur-[120px] rounded-full"></div>
+      <div className="absolute top-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)] blur-[120px] rounded-full" aria-hidden="true"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)] blur-[120px] rounded-full" aria-hidden="true"></div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
         <motion.div
@@ -39,15 +39,15 @@ export default function VisionMission() {
           whileInView={{ opacity:1, y:0 }}
           viewport={{ once:true }}
           transition={{ duration:0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1f3c88]">
+          <h2 id="vision-mission-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gradient">
             Vision & Mission
           </h2>
 
-          <div className="mx-auto mt-4 w-20 h-[4px] bg-[#1B93D1] rounded-full"></div>
+          <div className="mx-auto mt-4 w-20 h-[4px] bg-[var(--color-gold)] rounded-full"></div>
 
-          <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="mt-4 sm:mt-6 text-gray-600 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg">
             Our guiding philosophy shapes how we educate, inspire and empower
             every student to reach their fullest potential.
           </p>
@@ -75,7 +75,7 @@ export default function VisionMission() {
             />
 
             {/* overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-[#1B93D1]/40"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)]"></div>
 
             <div className="relative p-12">
 
@@ -83,12 +83,12 @@ export default function VisionMission() {
               <motion.div
                 animate={{ y:[0,-8,0] }}
                 transition={{ repeat:Infinity, duration:3 }}
-                className="w-16 h-16 flex items-center justify-center rounded-xl bg-[#2457A7] text-white shadow-lg"
+                className="w-16 h-16 flex items-center justify-center rounded-xl bg-[var(--color-primary)] text-white shadow-lg"
               >
                 <HiLightBulb className="w-8 h-8"/>
               </motion.div>
 
-              <h3 className="mt-6 text-3xl font-bold text-[#2457A7]">
+              <h3 className="mt-6 text-3xl font-bold text-gradient">
                 Our Vision
               </h3>
 
@@ -116,19 +116,19 @@ export default function VisionMission() {
             />
 
             {/* overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-[#2457A7]/40"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)]"></div>
 
             <div className="relative p-12">
 
               <motion.div
                 animate={{ y:[0,-8,0] }}
                 transition={{ repeat:Infinity, duration:3 }}
-                className="w-16 h-16 flex items-center justify-center rounded-xl bg-[#1B93D1] text-white shadow-lg"
+                className="w-16 h-16 flex items-center justify-center rounded-xl bg-[var(--color-accent)] text-white shadow-lg"
               >
                 <HiFlag className="w-8 h-8"/>
               </motion.div>
 
-              <h3 className="mt-6 text-3xl font-bold text-[#2457A7]">
+              <h3 className="mt-6 text-3xl font-bold text-gradient">
                 Our Mission
               </h3>
 

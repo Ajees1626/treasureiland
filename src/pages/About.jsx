@@ -13,6 +13,7 @@ export default function About() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
+      aria-label="About Us page"
     >
       <AboutHero />
       <VisionMission />

@@ -36,10 +36,10 @@ export default function WhyChoose() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold text-[#2457A7] sm:text-4xl">
+          <h2 className="text-3xl font-bold text-gradient sm:text-4xl">
             Why Choose Our School?
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#1B93D1]" />
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[var(--color-gold)]" />
           <p className="mx-auto mt-6 max-w-2xl text-gray-600">
             A place where excellence meets care and every child is prepared for tomorrow.
             Click any card to view full details.
@@ -57,7 +57,7 @@ export default function WhyChoose() {
               tabIndex={0}
               onClick={() => setSelected(item)}
               onKeyDown={(e) => e.key === 'Enter' && setSelected(item)}
-              className="cursor-pointer overflow-hidden rounded-2xl border border-[#94DCF2]/40 bg-white shadow-md transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#2457A7]"
+              className="cursor-pointer overflow-hidden rounded-2xl border border-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)] bg-white shadow-md transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
             >
               <div className="relative h-40 overflow-hidden bg-gray-100">
                 <img
@@ -66,13 +66,13 @@ export default function WhyChoose() {
                   className="h-full w-full object-cover transition duration-300 hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2457A7]/60 to-transparent" />
-                <div className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white text-[#2457A7]">
+                <div className="absolute inset-0 bg-gradient-to-t from-[color:color-mix(in_srgb,var(--color-primary)_60%,transparent)] to-transparent" />
+                <div className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white text-[var(--color-accent)]">
                   <item.Icon className="h-5 w-5" />
                 </div>
               </div>
               <div className="p-5">
-                <h3 className="text-lg font-semibold text-[#2457A7]">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-gradient">{item.title}</h3>
                 <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-gray-600">
                   {item.description}
                 </p>
@@ -117,10 +117,10 @@ export default function WhyChoose() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-4 flex items-center gap-3 text-white">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[#2457A7]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-[var(--color-accent)]">
                       <selected.Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="text-2xl font-bold sm:text-3xl">{selected.title}</h3>
+                    <h3 className="text-2xl font-bold text-gradient sm:text-3xl">{selected.title}</h3>
                   </div>
                 </div>
                 <div className="p-6 sm:p-8">

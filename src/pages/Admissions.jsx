@@ -16,6 +16,7 @@ export default function Admissions() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
+      aria-label="Admissions page"
     >
       <AdmissionsHero />
       <WhyChoose />

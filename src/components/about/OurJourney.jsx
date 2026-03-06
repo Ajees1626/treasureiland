@@ -44,8 +44,8 @@ export default function OurJourney() {
     <section className="relative py-28 bg-gradient-to-b from-white to-[#f5f9ff] overflow-hidden">
 
       {/* Background Blurs */}
-      <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-[#1B93D1]/10 rounded-full blur-[140px]"></div>
-      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[#2457A7]/10 rounded-full blur-[140px]"></div>
+      <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)] rounded-full blur-[140px]"></div>
+      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)] rounded-full blur-[140px]"></div>
 
       <div className="max-w-7xl mx-auto px-6">
 
@@ -57,11 +57,11 @@ export default function OurJourney() {
           transition={{ duration:.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#2457A7]">
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient">
             Our Journey
           </h2>
 
-          <div className="mx-auto mt-4 w-24 h-[4px] bg-[#1B93D1] rounded-full"></div>
+          <div className="mx-auto mt-4 w-24 h-[4px] bg-[var(--color-gold)] rounded-full"></div>
 
           <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
             Our journey reflects years of dedication to nurturing young minds,
@@ -80,7 +80,7 @@ export default function OurJourney() {
         >
 
           {/* Center Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-[#1B93D1]/30"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-[color:color-mix(in_srgb,var(--color-accent)_30%,transparent)]"></div>
 
           <div className="space-y-20">
 
@@ -99,12 +99,12 @@ export default function OurJourney() {
                   {/* LEFT CARD */}
                   {isLeft && (
                     <div className="md:pr-16">
-                      <div className="bg-white rounded-3xl shadow-xl p-8 border border-[#1B93D1]/10">
-                        <span className="text-sm font-semibold text-[#1B93D1]">
+                      <div className="bg-white rounded-3xl shadow-xl p-8 border border-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)]">
+                        <span className="text-sm font-semibold text-[var(--color-accent)]">
                           {itemData.year}
                         </span>
 
-                        <h3 className="text-2xl font-bold text-[#2457A7] mt-2">
+                        <h3 className="text-2xl font-bold text-gradient mt-2">
                           {itemData.title}
                         </h3>
 
@@ -117,7 +117,7 @@ export default function OurJourney() {
 
                   {/* ICON */}
                   <div className="hidden md:flex justify-center">
-                    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#2457A7] text-white shadow-lg">
+                    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[var(--color-primary)] text-white shadow-lg">
                       <HiAcademicCap size={26}/>
                     </div>
                   </div>
@@ -125,12 +125,12 @@ export default function OurJourney() {
                   {/* RIGHT CARD */}
                   {!isLeft && (
                     <div className="md:pl-16">
-                      <div className="bg-white rounded-3xl shadow-xl p-8 border border-[#1B93D1]/10">
-                        <span className="text-sm font-semibold text-[#1B93D1]">
+                      <div className="bg-white rounded-3xl shadow-xl p-8 border border-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)]">
+                        <span className="text-sm font-semibold text-[var(--color-accent)]">
                           {itemData.year}
                         </span>
 
-                        <h3 className="text-2xl font-bold text-[#2457A7] mt-2">
+                        <h3 className="text-2xl font-bold text-gradient mt-2">
                           {itemData.title}
                         </h3>
 

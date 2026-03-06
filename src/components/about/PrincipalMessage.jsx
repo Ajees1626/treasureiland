@@ -31,8 +31,8 @@ export default function PrincipalMessage() {
     <section className="relative py-28 bg-gradient-to-b from-[#f4f8fc] to-white overflow-hidden">
 
       {/* Background Shapes */}
-      <div className="absolute -left-40 top-20 w-[400px] h-[400px] bg-[#1B93D1]/10 rounded-full blur-[140px]"></div>
-      <div className="absolute -right-40 bottom-0 w-[420px] h-[420px] bg-[#2457A7]/10 rounded-full blur-[140px]"></div>
+      <div className="absolute -left-40 top-20 w-[400px] h-[400px] bg-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)] rounded-full blur-[140px]"></div>
+      <div className="absolute -right-40 bottom-0 w-[420px] h-[420px] bg-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)] rounded-full blur-[140px]"></div>
 
       <motion.div
         variants={container}
@@ -44,11 +44,11 @@ export default function PrincipalMessage() {
 
         {/* Heading */}
         <motion.div variants={fadeUp} className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#2457A7]">
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient">
             Message from the Principal
           </h2>
 
-          <div className="mx-auto mt-4 w-24 h-[4px] bg-[#1B93D1] rounded-full"></div>
+          <div className="mx-auto mt-4 w-24 h-[4px] bg-[var(--color-gold)] rounded-full"></div>
 
           <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
             Leadership that inspires excellence, nurtures values and prepares
@@ -65,7 +65,7 @@ export default function PrincipalMessage() {
             className="relative group"
           >
 
-            <div className="absolute -top-6 -left-6 w-full h-full border-4 border-[#1B93D1]/30 rounded-3xl"></div>
+            <div className="absolute -top-6 -left-6 w-full h-full border-4 border-[color:color-mix(in_srgb,var(--color-accent)_30%,transparent)] rounded-3xl"></div>
 
             <img
               src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=900"
@@ -81,7 +81,7 @@ export default function PrincipalMessage() {
 
             <div className="relative bg-white shadow-xl rounded-3xl p-10">
 
-              <FaQuoteLeft className="text-[#1B93D1] text-4xl mb-6"/>
+              <FaQuoteLeft className="text-[var(--color-gold)] text-4xl mb-6"/>
 
               <p className="text-lg text-gray-700 leading-relaxed italic">
                 Education is not only about academic success — it is about
@@ -98,7 +98,7 @@ export default function PrincipalMessage() {
               </p>
 
               <div className="mt-10 border-t pt-6">
-                <p className="text-xl font-semibold text-[#2457A7]">
+                <p className="text-xl font-semibold text-gradient">
                   Dr. William Anderson
                 </p>
                 <p className="text-gray-500">

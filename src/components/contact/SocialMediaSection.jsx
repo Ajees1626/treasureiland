@@ -19,10 +19,10 @@ export default function SocialMediaSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold text-[#2457A7] sm:text-4xl">
+          <h2 className="text-3xl font-bold text-gradient sm:text-4xl">
             Connect With Us
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#1B93D1]" />
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[var(--color-gold)]" />
           <p className="mx-auto mt-4 max-w-2xl text-gray-600">
             Follow our social media for updates, events and school life.
           </p>
@@ -38,7 +38,7 @@ export default function SocialMediaSection() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex h-14 w-14 items-center justify-center rounded-2xl border border-[#94DCF2]/40 bg-[#f8fbff] text-[#2457A7] shadow-md transition hover:scale-110 hover:border-transparent hover:text-white hover:shadow-lg ${item.color}`}
+              className={`flex h-14 w-14 items-center justify-center rounded-2xl border border-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)] bg-[#f8fbff] text-[var(--color-accent)] shadow-md transition hover:scale-110 hover:border-transparent hover:text-white hover:shadow-lg ${item.color}`}
               aria-label={item.label}
             >
               <item.icon className="h-6 w-6" />

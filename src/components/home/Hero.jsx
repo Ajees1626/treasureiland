@@ -27,7 +27,8 @@ export default function Hero() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="relative flex min-h-[560px] flex-col justify-center overflow-hidden sm:min-h-[620px] lg:min-h-[700px]"
+      className="relative flex min-h-[420px] sm:min-h-[520px] md:min-h-[560px] lg:min-h-[620px] xl:min-h-[700px] flex-col justify-center overflow-hidden"
+      aria-label="Hero banner"
     >
       {/* Background slideshow */}
       <div className="absolute inset-0">
@@ -63,50 +64,80 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 text-left sm:px-6 lg:px-8 lg:py-24">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 lg:py-24 xl:py-28 text-left">
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.6 }}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+            },
+          }}
           className="max-w-3xl"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 backdrop-blur-md">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#94DCF2]" />
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 backdrop-blur-md"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-gold)]" />
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-white/95">
               A Senior Secondary CBSE School
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className="mt-6 text-4xl font-bold leading-[1.15] tracking-tight text-white drop-shadow-lg sm:text-5xl lg:text-6xl lg:leading-[1.1]">
+          <motion.h1
+            variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mt-4 sm:mt-6 text-3xl font-bold leading-[1.15] tracking-tight text-gradient-light drop-shadow-lg sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl lg:leading-[1.1]"
+          >
             <span className="block">Discover Your</span>
-            <span className="mt-1 block bg-linear-to-r from-white to-[#94DCF2] bg-clip-text text-transparent">
+            <span className="mt-1 block bg-linear-to-r from-white to-[var(--color-gold)] bg-clip-text text-transparent">
               Treasure Iland
             </span>
-          </h1>
-          <p className="mt-4 text-lg font-medium tracking-wide text-white/90 sm:text-xl">
+          </motion.h1>
+          <motion.p
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mt-4 text-lg font-medium tracking-wide text-white/90 sm:text-xl"
+          >
             International School · Built for Tomorrow
-          </p>
+          </motion.p>
 
           {/* Accent line */}
-          <div
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, scaleX: 0 },
+              visible: { opacity: 1, scaleX: 1 },
+            }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            style={{ transformOrigin: 'left', background: 'linear-gradient(90deg, var(--color-gold), transparent)' }}
             className="mt-6 h-0.5 w-20 rounded-full"
-            style={{ background: 'linear-gradient(90deg, #94DCF2, transparent)' }}
           />
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <span className="rounded-lg border border-white/40 bg-white/95 px-5 py-2.5 text-sm font-bold uppercase tracking-wider text-[#2457A7] shadow-lg">
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mt-8 flex flex-wrap items-center gap-3"
+          >
+            <span className="rounded-lg border border-white/40 bg-white/95 px-5 py-2.5 text-sm font-bold uppercase tracking-wider text-[var(--color-primary)] shadow-lg">
               Admissions Open
             </span>
-            <span className="rounded-lg bg-[#1B93D1] px-4 py-2.5 text-sm font-semibold text-white shadow-lg">
+            <span className="rounded-lg bg-[var(--color-accent)] px-4 py-2.5 text-sm font-semibold text-white shadow-lg">
               2026–2027
             </span>
-          </div>
+          </motion.div>
 
-          <div className="mt-8 flex items-center gap-2.5 text-white/90">
-            <HiLocationMarker className="h-5 w-5 shrink-0 text-[#94DCF2]" />
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mt-8 flex items-center gap-2.5 text-white/90"
+          >
+            <HiLocationMarker className="h-5 w-5 shrink-0 text-[var(--color-gold)]" />
             <span className="font-medium tracking-wide">Vishwanathapuram, Shencottai</span>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 
@@ -119,7 +150,7 @@ export default function Hero() {
             onClick={() => setCurrentSlide(index)}
             className={`rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? 'h-2 w-8 bg-[#94DCF2]'
+                ? 'h-2 w-8 bg-[var(--color-gold)]'
                 : 'h-2 w-2 bg-white/50 hover:bg-white/80'
             }`}
             aria-label={`Go to slide ${index + 1}`}

@@ -1,90 +1,120 @@
-import { motion } from 'framer-motion'
-import { HiAcademicCap, HiRefresh, HiHeart, HiTrendingUp } from 'react-icons/hi'
+import { motion } from "framer-motion";
+import { HiAcademicCap, HiRefresh, HiHeart, HiTrendingUp } from "react-icons/hi";
 
 const faculty = [
   {
-    name: 'Senior Faculty',
-    role: 'Mathematics',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400',
+    name: "Senior Faculty",
+    role: "Mathematics",
+    image:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800",
   },
   {
-    name: 'Senior Faculty',
-    role: 'Science',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400',
+    name: "Senior Faculty",
+    role: "Science",
+    image:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800",
   },
   {
-    name: 'Senior Faculty',
-    role: 'Languages',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400',
+    name: "Senior Faculty",
+    role: "Languages",
+    image:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800",
   },
-]
+];
 
 const points = [
-  { icon: HiAcademicCap, text: 'Qualified, experienced teachers with strong subject and pedagogical knowledge.' },
-  { icon: HiRefresh, text: 'Regular training and workshops to stay updated with best practices.' },
-  { icon: HiHeart, text: 'Understanding of child psychology and age-appropriate teaching methods.' },
-  { icon: HiTrendingUp, text: 'Continuous professional development and peer learning.' },
-]
+  {
+    icon: HiAcademicCap,
+    text: "Qualified, experienced teachers with strong subject expertise.",
+  },
+  {
+    icon: HiRefresh,
+    text: "Continuous teacher training and modern teaching methods.",
+  },
+  {
+    icon: HiHeart,
+    text: "Deep understanding of child psychology and learning styles.",
+  },
+  {
+    icon: HiTrendingUp,
+    text: "Professional development and collaborative learning culture.",
+  },
+];
 
 export default function FacultyExcellence() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="text-3xl font-bold text-[#2457A7] sm:text-4xl">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fbff] to-white py-20">
+      <div className="mx-auto max-w-7xl px-6">
+
+        {/* heading */}
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-gradient">
             Faculty Excellence
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#1B93D1]" />
+          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-[var(--color-gold)]" />
           <p className="mx-auto mt-6 max-w-2xl text-gray-600">
-            Our teachers are the backbone of our methodology—qualified, trained, and committed to every child.
+            Our teachers are the backbone of our methodology — qualified,
+            experienced, and dedicated to nurturing every child.
           </p>
-        </motion.div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {points.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="flex gap-3 rounded-xl border border-[#94DCF2]/40 bg-[#f8fbff] p-4"
-            >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#2457A7]/10 text-[#2457A7]">
-                <item.icon className="h-5 w-5" />
-              </div>
-              <p className="text-sm text-gray-700">{item.text}</p>
-            </motion.div>
-          ))}
         </div>
-        <div className="mt-12 flex flex-wrap justify-center gap-8">
-          {faculty.map((person, i) => (
-            <motion.div
-              key={person.role}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="text-center"
-            >
-              <div className="mx-auto h-24 w-24 overflow-hidden rounded-full border-2 border-[#2457A7]/20 sm:h-28 sm:w-28">
+
+        <div className="mt-16 grid lg:grid-cols-2 gap-14">
+
+          {/* LEFT SIDE */}
+          <div className="grid gap-6">
+            {points.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className="flex gap-4 rounded-2xl border border-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)] bg-white p-6 shadow-sm hover:shadow-lg"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] text-white">
+                  <item.icon className="h-6 w-6" />
+                </div>
+
+                <p className="text-gray-700">{item.text}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* RIGHT SIDE MASONRY GRID */}
+          <div className="grid grid-cols-2 gap-6 auto-rows-[220px]">
+
+            {faculty.map((person, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2 }}
+                className={`group relative overflow-hidden rounded-3xl shadow-lg 
+                ${i === 0 ? "row-span-2" : ""}`}
+              >
                 <img
                   src={person.image}
                   alt={person.name}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                 />
-              </div>
-              <p className="mt-3 font-semibold text-[#2457A7]">{person.name}</p>
-              <p className="text-sm text-gray-500">{person.role}</p>
-            </motion.div>
-          ))}
+
+                {/* overlay */}
+                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/30 to-transparent p-6 opacity-0 transition group-hover:opacity-100">
+
+                  <h3 className="text-gradient-light text-lg font-semibold">
+                    {person.name}
+                  </h3>
+
+                  <p className="text-white/80 text-sm">
+                    {person.role}
+                  </p>
+
+                </div>
+              </motion.div>
+            ))}
+
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

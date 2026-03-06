@@ -66,7 +66,7 @@ function Counter({ value, suffix }) {
 export default function CountSection() {
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-[#2457A7] to-[#1B93D1] overflow-hidden">
+    <section className="relative py-24 bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-accent)] to-[var(--color-gold)] overflow-hidden">
 
       {/* background glow */}
       <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-white/10 blur-[140px] rounded-full"></div>
@@ -83,7 +83,7 @@ export default function CountSection() {
           className="text-center mb-16"
         >
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient-light">
             Our Achievements
           </h2>
 

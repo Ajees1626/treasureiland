@@ -8,11 +8,12 @@ import QuickContactCards from '../components/contact/QuickContactCards'
 
 export default function Contact() {
   return (
-    <motion.main
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
       className="min-h-screen bg-white"
+      aria-label="Contact page"
     >
       <ContactHero />
       <ContactInfoCards />
@@ -22,6 +23,6 @@ export default function Contact() {
       <MapSection />
       <QuickContactCards />
       <SocialMediaSection />
-    </motion.main>
+    </motion.div>
   )
 }

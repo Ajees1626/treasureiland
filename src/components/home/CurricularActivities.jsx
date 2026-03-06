@@ -2,6 +2,7 @@ import { useRef } from "react"
 import Slider from "react-slick"
 import { motion } from "framer-motion"
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi"
+import { viewportLite, transitionLite } from "../../utils/scrollMotion"
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -55,51 +56,59 @@ export default function CurricularActivities() {
   }
 
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white to-[#f4f8ff]">
+    <section className="relative py-14 sm:py-20 md:py-24 lg:py-28 overflow-hidden bg-gradient-to-b from-white to-[#f4f8ff]" aria-labelledby="curricular-heading">
 
       {/* Background Blur Effects */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#3CB5E5]/20 blur-[120px] rounded-full"></div>
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#2457A7]/20 blur-[120px] rounded-full"></div>
+      <div className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-[color:color-mix(in_srgb,var(--color-accent)_20%,transparent)] blur-[120px] rounded-full" aria-hidden="true"></div>
+      <div className="absolute bottom-10 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-[color:color-mix(in_srgb,var(--color-accent)_20%,transparent)] blur-[120px] rounded-full" aria-hidden="true"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .7 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={transitionLite}
+          viewport={viewportLite}
+          className="text-center mb-10 sm:mb-14 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1f3c88]">
+          <h2 id="curricular-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gradient">
             Curricular Activities
           </h2>
 
-          <div className="mx-auto mt-4 w-20 h-[4px] bg-[#1B93D1] rounded-full"></div>
+          <div className="mx-auto mt-4 w-20 h-[4px] bg-[var(--color-gold)] rounded-full"></div>
 
-          <p className="mt-6 max-w-2xl mx-auto text-gray-600 text-lg">
+          <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-gray-600 text-sm sm:text-base lg:text-lg">
             Learning goes beyond classrooms. Our students participate in creative,
             athletic and leadership programs that shape their future.
           </p>
         </motion.div>
 
         {/* Slider */}
-        <div className="relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportLite}
+          transition={{ ...transitionLite, delay: 0.08 }}
+          className="relative"
+        >
 
-          {/* Left Arrow */}
+          {/* Left Arrow - hidden on small screens, slider dots used instead */}
           <button
             onClick={() => sliderRef.current?.slickPrev()}
-            className="absolute -left-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl p-3 rounded-full hover:bg-[#2457A7] hover:text-white transition"
+            aria-label="Previous slide"
+            className="absolute left-0 sm:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl p-2 sm:p-3 rounded-full hover:bg-[var(--color-primary)] hover:text-white transition"
           >
-            <HiChevronLeft size={24}/>
+            <HiChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           {/* Right Arrow */}
           <button
             onClick={() => sliderRef.current?.slickNext()}
-            className="absolute -right-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl p-3 rounded-full hover:bg-[#2457A7] hover:text-white transition"
+            aria-label="Next slide"
+            className="absolute right-0 sm:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl p-2 sm:p-3 rounded-full hover:bg-[var(--color-primary)] hover:text-white transition"
           >
-            <HiChevronRight size={24}/>
+            <HiChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           <Slider ref={sliderRef} {...settings}>
@@ -120,7 +129,7 @@ export default function CurricularActivities() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-[360px] w-full object-cover transition duration-700 group-hover:scale-110"
+                    className="h-[260px] sm:h-[300px] md:h-[340px] lg:h-[360px] w-full object-cover transition duration-700 group-hover:scale-110"
                   />
 
                   {/* Overlay Gradient */}
@@ -129,7 +138,7 @@ export default function CurricularActivities() {
                   {/* Glass Card Content */}
                   <div className="absolute bottom-0 p-6 text-white backdrop-blur-md">
 
-                    <h3 className="text-2xl font-semibold mb-2">
+                    <h3 className="text-2xl font-semibold text-gradient mb-2">
                       {item.title}
                     </h3>
 
@@ -140,7 +149,7 @@ export default function CurricularActivities() {
                   </div>
 
                   {/* Hover Glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 border-2 border-[#1B93D1] rounded-3xl"></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 border-2 border-[var(--color-gold)] rounded-3xl"></div>
 
                 </motion.div>
 
@@ -149,7 +158,7 @@ export default function CurricularActivities() {
             ))}
 
           </Slider>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

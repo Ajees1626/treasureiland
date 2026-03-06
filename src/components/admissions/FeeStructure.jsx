@@ -1,55 +1,103 @@
-import { motion } from 'framer-motion'
-import { HiCurrencyRupee, HiCalendar, HiDocumentText } from 'react-icons/hi'
+import { motion } from "framer-motion"
+import { HiCurrencyRupee, HiCalendar, HiDocumentText } from "react-icons/hi"
 
 const feeItems = [
-  { icon: HiCurrencyRupee, title: 'Admission Fee', desc: 'One-time fee at the time of admission. Non-refundable.' },
-  { icon: HiCurrencyRupee, title: 'Tuition Fee', desc: 'Term-wise or annual. Covers academic program and basic facilities.' },
-  { icon: HiCurrencyRupee, title: 'Transport Fee', desc: 'Optional. Based on route and distance. Billed separately.' },
-  { icon: HiCalendar, title: 'Payment Schedule', desc: 'Due dates communicated at admission. Typically term-wise (e.g. June, October, February).' },
-  { icon: HiDocumentText, title: 'Installment Options', desc: 'Installment plans may be available. Please confirm with the accounts office.' },
+  {
+    icon: HiCurrencyRupee,
+    title: "Admission Fee",
+    desc: "One-time fee payable during admission. This confirms the student's seat and is non-refundable."
+  },
+  {
+    icon: HiCurrencyRupee,
+    title: "Tuition Fee",
+    desc: "Paid term-wise or annually. Covers academic learning, classrooms and regular school facilities."
+  },
+  {
+    icon: HiCurrencyRupee,
+    title: "Transport Fee",
+    desc: "Optional transport service depending on route and distance from the school."
+  },
+  {
+    icon: HiCalendar,
+    title: "Payment Schedule",
+    desc: "Fees are usually paid term-wise with due dates communicated during admission."
+  },
+  {
+    icon: HiDocumentText,
+    title: "Installment Options",
+    desc: "Flexible installment plans may be available. Please contact the accounts office."
+  }
 ]
 
 export default function FeeStructure() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-[#f3f8ff] to-white">
+
+      {/* decorative shapes */}
+      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blue-200 rounded-full blur-3xl opacity-40"></div>
+      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-sky-200 rounded-full blur-3xl opacity-40"></div>
+
+      <div className="max-w-7xl mx-auto px-6 relative">
+
+        {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
+          initial={{ opacity:0,y:30 }}
+          whileInView={{ opacity:1,y:0 }}
+          transition={{ duration:0.6 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-[#2457A7] sm:text-4xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient">
             Fee Structure
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#1B93D1]" />
-          <p className="mt-6 text-gray-600">
-            Transparent and simple. Exact amounts are provided at the time of admission.
+
+          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+            Our fee system is transparent and designed to support quality
+            education while remaining convenient for parents.
           </p>
+
+          <div className="mx-auto mt-4 h-1 w-20 bg-[var(--color-gold)] rounded-full"></div>
         </motion.div>
-        <div className="mt-10 space-y-4">
-          {feeItems.map((item, i) => (
+
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          {feeItems.map((item,index)=>(
             <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="flex items-start gap-4 rounded-xl border border-[#94DCF2]/40 bg-[#f8fbff] p-5"
+              key={index}
+              initial={{ opacity:0,y:40 }}
+              whileInView={{ opacity:1,y:0 }}
+              transition={{ delay:index*0.08 }}
+              whileHover={{ y:-8 }}
+              className="group bg-white p-7 rounded-2xl shadow-md hover:shadow-xl transition"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#2457A7]/10 text-[#2457A7]">
-                <item.icon className="h-5 w-5" />
+
+              {/* icon */}
+              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-[color:color-mix(in_srgb,var(--color-accent)_12%,white)] text-[var(--color-primary)] group-hover:bg-[var(--color-accent)] group-hover:text-white transition">
+                <item.icon className="w-7 h-7"/>
               </div>
-              <div>
-                <h3 className="font-semibold text-[#2457A7]">{item.title}</h3>
-                <p className="mt-1 text-sm text-gray-600">{item.desc}</p>
-              </div>
+
+              {/* title */}
+              <h3 className="mt-5 text-lg font-semibold text-gradient">
+                {item.title}
+              </h3>
+
+              {/* desc */}
+              <p className="mt-2 text-gray-600 text-sm leading-relaxed">
+                {item.desc}
+              </p>
+
             </motion.div>
           ))}
+
         </div>
-        <p className="mt-6 text-center text-sm text-gray-500">
-          For the current year’s fee breakdown, please collect the fee circular from the school office or contact admissions.
+
+        {/* Footer Note */}
+        <p className="text-center text-sm text-gray-500 mt-12 max-w-xl mx-auto">
+          Exact fee amounts and complete fee circular will be provided at the
+          time of admission. Parents may also contact the school office for
+          detailed information.
         </p>
+
       </div>
     </section>
   )

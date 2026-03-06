@@ -1,58 +1,127 @@
-import { motion } from 'framer-motion'
-import { HiClipboardList, HiDocumentText, HiChat, HiIdentification, HiCurrencyRupee } from 'react-icons/hi'
+import { motion } from "framer-motion";
+import {
+  HiClipboardList,
+  HiDocumentText,
+  HiChat,
+  HiIdentification,
+  HiCurrencyRupee,
+} from "react-icons/hi";
 
 const steps = [
-  { icon: HiClipboardList, title: 'Submit Enquiry Form', desc: 'Fill the online or offline enquiry form with basic details. Our team will get in touch.' },
-  { icon: HiDocumentText, title: 'Collect Application Form', desc: 'Collect the application form from the school office or download from the website.' },
-  { icon: HiChat, title: 'Entrance Test / Interaction', desc: 'Child may be assessed or invited for an interaction as per grade and policy.' },
-  { icon: HiIdentification, title: 'Document Verification', desc: 'Submit and verify required documents at the school office.' },
-  { icon: HiCurrencyRupee, title: 'Fee Payment & Confirmation', desc: 'Pay admission and first-term fees to confirm the seat. Receive admission confirmation.' },
-]
+  {
+    icon: HiClipboardList,
+    title: "Submit Enquiry Form",
+    desc: "Fill the enquiry form online or at the school office. Our admission team will contact you.",
+  },
+  {
+    icon: HiDocumentText,
+    title: "Collect Application Form",
+    desc: "Collect the application form from the school office or download it from the website.",
+  },
+  {
+    icon: HiChat,
+    title: "Entrance Test / Interaction",
+    desc: "Students may attend a small assessment or interaction depending on the grade level.",
+  },
+  {
+    icon: HiIdentification,
+    title: "Document Verification",
+    desc: "Submit required documents for verification at the school admission office.",
+  },
+  {
+    icon: HiCurrencyRupee,
+    title: "Fee Payment & Confirmation",
+    desc: "Complete the admission fee payment to confirm your child's seat.",
+  },
+];
 
 export default function AdmissionProcess() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-[#f8fbff] to-white py-16 sm:py-20">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fbff] to-white py-24">
+
+      <div className="mx-auto max-w-5xl px-6">
+
+        {/* heading */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold text-[#2457A7] sm:text-4xl">
+          <h2 className="text-4xl font-bold text-gradient">
             Admission Process
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#1B93D1]" />
+
+          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-[var(--color-gold)]" />
+
           <p className="mt-6 text-gray-600">
-            A clear, step-by-step path from enquiry to confirmation.
+            Follow these simple steps to complete your child's admission.
           </p>
         </motion.div>
-        <div className="mt-12 space-y-6">
-          {steps.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="relative flex gap-5 rounded-2xl border border-[#94DCF2]/40 bg-white p-5 pl-14 shadow-sm sm:p-6 sm:pl-16"
-            >
-              <div className="absolute left-5 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-[#2457A7] text-white shadow sm:left-6">
-                <span className="text-sm font-bold">{i + 1}</span>
-              </div>
-              <div className="flex flex-1 items-center gap-4">
-                <div className="hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#2457A7]/10 text-[#2457A7]">
-                  <item.icon className="h-6 w-6" />
+
+        {/* timeline */}
+        <div className="relative mt-16">
+
+          {/* center line */}
+          <div className="absolute left-6 top-0 h-full w-1 bg-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)]"></div>
+
+          <div className="space-y-10">
+
+            {steps.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="relative flex items-start gap-6"
+              >
+
+                {/* step circle */}
+                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] text-white shadow-lg">
+                  <span className="text-lg font-bold">{i + 1}</span>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-[#2457A7]">Step {i + 1}: {item.title}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{item.desc}</p>
+
+                {/* card */}
+                <div className="flex-1 rounded-2xl border border-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)] bg-white p-6 shadow-sm transition hover:shadow-xl">
+
+                  <div className="flex items-center gap-4">
+
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[color:color-mix(in_srgb,var(--color-accent)_12%,white)] text-[var(--color-primary)]">
+                      <item.icon className="h-6 w-6" />
+                    </div>
+
+                    <h3 className="text-lg font-semibold text-gradient">
+                      {item.title}
+                    </h3>
+
+                  </div>
+
+                  <p className="mt-3 text-gray-600 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+
                 </div>
-              </div>
-            </motion.div>
-          ))}
+
+              </motion.div>
+            ))}
+
+          </div>
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <button className="rounded-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] px-10 py-4 text-white font-semibold shadow-lg transition hover:scale-105">
+            Start Admission Enquiry
+          </button>
+        </motion.div>
+
       </div>
     </section>
-  )
+  );
 }

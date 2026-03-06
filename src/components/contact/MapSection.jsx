@@ -13,10 +13,10 @@ export default function MapSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold text-[#2457A7] sm:text-4xl">
+          <h2 className="text-3xl font-bold text-gradient sm:text-4xl">
             Find Our Campus
           </h2>
-          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#1B93D1]" />
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[var(--color-gold)]" />
           <p className="mx-auto mt-4 max-w-2xl text-gray-600">
             Visit us at our campus in Vishwanathapuram, Shencottai. Replace the embed URL below with your school&apos;s Google Map link.
           </p>
@@ -26,7 +26,7 @@ export default function MapSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="mt-10 overflow-hidden rounded-2xl border border-[#94DCF2]/40 bg-white shadow-xl"
+          className="mt-10 overflow-hidden rounded-2xl border border-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)] bg-white shadow-xl"
         >
           <div className="aspect-video w-full">
             <iframe

@@ -10,6 +10,8 @@ import MandatoryDisclosure from './pages/MandatoryDisclosure'
 import TeachingMethodology from './pages/TeachingMethodology'
 import Admissions from './pages/Admissions'
 import Blog from './pages/Blog'
+import NewsDetail from './pages/NewsDetail'
+import EventDetail from './pages/EventDetail'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 
@@ -28,6 +30,8 @@ function App() {
             <Route path="/teaching-methodology" element={<TeachingMethodology />} />
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/news/:id" element={<NewsDetail />} />
+            <Route path="/blog/events/:id" element={<EventDetail />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

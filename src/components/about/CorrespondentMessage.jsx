@@ -6,8 +6,8 @@ export default function CorrespondentMessage() {
     <section className="relative py-28 bg-gradient-to-b from-[#f7fbff] to-white overflow-hidden">
 
       {/* Background Glow */}
-      <div className="absolute top-10 left-10 w-96 h-96 bg-[#1B93D1]/10 blur-[120px] rounded-full"></div>
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#2457A7]/10 blur-[120px] rounded-full"></div>
+      <div className="absolute top-10 left-10 w-96 h-96 bg-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)] blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)] blur-[120px] rounded-full"></div>
 
       <div className="max-w-7xl mx-auto px-6">
 
@@ -19,11 +19,11 @@ export default function CorrespondentMessage() {
           transition={{ duration:.7 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1f3c88]">
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient">
             Message from the Correspondent
           </h2>
 
-          <div className="mx-auto mt-4 w-20 h-[4px] bg-[#1B93D1] rounded-full"></div>
+          <div className="mx-auto mt-4 w-20 h-[4px] bg-[var(--color-gold)] rounded-full"></div>
 
           <p className="mt-6 max-w-2xl mx-auto text-gray-600 text-lg">
             Leadership and guidance that shape the vision and direction of our institution.
@@ -43,7 +43,7 @@ export default function CorrespondentMessage() {
             className="relative group"
           >
 
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[#2457A7] to-[#1B93D1] opacity-20 blur-xl"></div>
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] opacity-20 blur-xl"></div>
 
             <img
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800"
@@ -67,13 +67,13 @@ export default function CorrespondentMessage() {
             <motion.div
               animate={{ y:[0,-8,0] }}
               transition={{ repeat:Infinity, duration:3 }}
-              className="w-16 h-16 flex items-center justify-center rounded-xl bg-[#2457A7] text-white shadow-lg mb-6"
+              className="w-16 h-16 flex items-center justify-center rounded-xl bg-[var(--color-primary)] text-white shadow-lg mb-6"
             >
               <HiOutlineChatAlt2 className="w-8 h-8"/>
             </motion.div>
 
 
-            <blockquote className="text-2xl italic text-[#2457A7] font-medium leading-relaxed">
+            <blockquote className="text-2xl italic text-gradient font-medium leading-relaxed">
               “As Correspondent, I ensure that our institution stays true to
               its mission while adapting to the evolving needs of modern
               education and society.”
@@ -90,7 +90,7 @@ export default function CorrespondentMessage() {
             {/* Signature */}
             <div className="mt-10 border-t pt-6">
 
-              <p className="text-xl font-semibold text-[#2457A7]">
+              <p className="text-xl font-semibold text-gradient">
                 Correspondent Name
               </p>
 

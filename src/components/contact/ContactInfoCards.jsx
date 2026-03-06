@@ -37,12 +37,12 @@ export default function ContactInfoCards() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -6 }}
-              className="rounded-2xl border border-[#94DCF2]/40 bg-white p-6 shadow-md transition-shadow hover:shadow-xl"
+              className="rounded-2xl border border-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)] bg-white p-6 shadow-md transition-shadow hover:shadow-xl"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#2457A7]/10 text-[#2457A7]">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[color:color-mix(in_srgb,var(--color-accent)_12%,white)] text-[var(--color-accent)]">
                 <item.icon className="h-7 w-7" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-[#2457A7]">
+              <h3 className="mt-4 text-lg font-semibold text-gradient">
                 {item.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-gray-600">

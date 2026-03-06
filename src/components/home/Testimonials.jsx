@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiStar, HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import { useEffect, useState } from 'react'
+import { viewportLite, transitionLite } from '../../utils/scrollMotion'
 
 const testimonials = [
   {
@@ -86,25 +87,25 @@ export default function Testimonials() {
   const current = testimonials[index]
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#f4f8fc] py-24">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#f4f8fc] py-14 sm:py-20 md:py-24 lg:py-28" aria-labelledby="testimonials-heading">
       {/* Soft accent */}
-      <div className="absolute -right-20 top-1/2 w-80 h-80 bg-[#94DCF2]/20 blur-[100px] rounded-full -translate-y-1/2" />
+      <div className="absolute -right-20 top-1/2 w-80 h-80 bg-[color:color-mix(in_srgb,var(--color-accent)_20%,transparent)] blur-[100px] rounded-full -translate-y-1/2" />
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        viewport={viewportLite}
+        transition={transitionLite}
         className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8"
       >
         {/* Heading */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 sm:mb-14">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-sm font-semibold tracking-wider text-[#1B93D1] uppercase"
+            className="text-sm font-semibold tracking-wider text-[var(--color-gold)] uppercase"
           >
             Testimonials
           </motion.p>
@@ -113,7 +114,8 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-2 text-4xl font-bold text-[#2457A7] lg:text-5xl"
+            id="testimonials-heading"
+            className="mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gradient"
           >
             What Our Clients Say
           </motion.h2>
@@ -122,12 +124,12 @@ export default function Testimonials() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.35, duration: 0.4 }}
-            className="mx-auto mt-4 h-1 w-16 bg-[#3CB5E5] rounded-full origin-center"
+            className="mx-auto mt-4 h-1 w-16 bg-[var(--color-gold)] rounded-full origin-center"
           />
         </div>
 
         {/* Card */}
-        <div className="relative min-h-[320px]">
+        <div className="relative min-h-[280px] sm:min-h-[320px]">
           <AnimatePresence mode="wait" custom={direction} initial={false}>
             <motion.div
               key={index}
@@ -140,14 +142,14 @@ export default function Testimonials() {
                 opacity: { duration: 0.35 },
                 x: { type: 'spring', stiffness: 300, damping: 30 },
               }}
-              className="absolute inset-0 rounded-3xl border border-[#94DCF2]/50 bg-white p-8 shadow-xl shadow-[#2457A7]/10 md:p-10"
+              className="absolute inset-0 rounded-3xl border border-[color:color-mix(in_srgb,var(--color-accent)_50%,transparent)] bg-white p-8 shadow-xl shadow-[color:color-mix(in_srgb,var(--color-accent)_18%,transparent)] md:p-10"
             >
               {/* Quote mark */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-5xl font-serif text-[#3CB5E5]/40 leading-none"
+                className="text-5xl font-serif text-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)] leading-none"
               >
                 “
               </motion.div>
@@ -166,7 +168,7 @@ export default function Testimonials() {
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.3 + j * 0.05 }}
                   >
-                    <HiStar className="h-6 w-6 text-[#3CB5E5] fill-[#3CB5E5]" />
+                    <HiStar className="h-6 w-6 text-[var(--color-gold)] fill-[var(--color-gold)]" />
                   </motion.span>
                 ))}
               </motion.div>
@@ -188,11 +190,11 @@ export default function Testimonials() {
                 transition={{ delay: 0.45 }}
                 className="mt-8 flex items-center gap-4"
               >
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#2457A7] to-[#1B93D1] text-lg font-bold text-white shadow-lg">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] text-lg font-bold text-white shadow-lg">
                   {current.initial}
                 </div>
                 <div>
-                  <p className="font-semibold text-[#2457A7]">{current.author}</p>
+                  <p className="font-semibold text-gradient">{current.author}</p>
                   <p className="text-sm text-gray-500">{current.role}</p>
                 </div>
               </motion.div>
@@ -206,7 +208,7 @@ export default function Testimonials() {
             type="button"
             onClick={goPrev}
             aria-label="Previous testimonial"
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-white border border-[#94DCF2] text-[#2457A7] shadow-md transition hover:bg-[#2457A7] hover:text-white hover:border-[#2457A7]"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-white border border-[var(--color-accent)] text-[var(--color-accent)] shadow-md transition hover:bg-[var(--color-accent)] hover:text-white hover:border-[var(--color-accent)]"
           >
             <HiChevronLeft className="h-6 w-6" />
           </button>
@@ -220,8 +222,8 @@ export default function Testimonials() {
                 aria-label={`Go to testimonial ${i + 1}`}
                 className={`h-2.5 rounded-full transition-all duration-300 ${
                   i === index
-                    ? 'w-8 bg-[#2457A7]'
-                    : 'w-2.5 bg-[#94DCF2] hover:bg-[#3CB5E5]'
+                    ? 'w-8 bg-[var(--color-gold)]'
+                    : 'w-2.5 bg-[color:color-mix(in_srgb,var(--color-accent)_35%,transparent)] hover:bg-[var(--color-gold)]'
                 }`}
               />
             ))}
@@ -231,7 +233,7 @@ export default function Testimonials() {
             type="button"
             onClick={goNext}
             aria-label="Next testimonial"
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-white border border-[#94DCF2] text-[#2457A7] shadow-md transition hover:bg-[#2457A7] hover:text-white hover:border-[#2457A7]"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-white border border-[var(--color-accent)] text-[var(--color-accent)] shadow-md transition hover:bg-[var(--color-accent)] hover:text-white hover:border-[var(--color-accent)]"
           >
             <HiChevronRight className="h-6 w-6" />
           </button>

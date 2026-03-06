@@ -64,9 +64,9 @@ export default function ContactForm() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-[#94DCF2]/40 bg-[#f8fbff] p-6 shadow-lg sm:p-8"
+            className="rounded-2xl border border-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)] bg-[#f8fbff] p-6 shadow-lg sm:p-8"
           >
-            <h2 className="text-2xl font-bold text-[#2457A7] sm:text-3xl">
+            <h2 className="text-2xl font-bold text-gradient sm:text-3xl">
               Send us a Message
             </h2>
             <p className="mt-2 text-gray-600">
@@ -76,7 +76,7 @@ export default function ContactForm() {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="mt-6 rounded-xl bg-[#2457A7]/10 p-4 text-[#2457A7] font-medium"
+                className="mt-6 rounded-xl bg-[color:color-mix(in_srgb,var(--color-accent)_12%,white)] p-4 text-[var(--color-primary)] font-medium"
               >
                 Thank you! Your message has been sent. We will contact you soon.
               </motion.p>
@@ -92,7 +92,7 @@ export default function ContactForm() {
                     type="text"
                     value={form.fullName}
                     onChange={handleChange}
-                    className={`mt-1 w-full rounded-xl border px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-[#2457A7] focus:ring-offset-1 ${
+                    className={`mt-1 w-full rounded-xl border px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-1 ${
                       errors.fullName ? 'border-red-400' : 'border-gray-300'
                     }`}
                     placeholder="Your full name"
@@ -111,7 +111,7 @@ export default function ContactForm() {
                     type="email"
                     value={form.email}
                     onChange={handleChange}
-                    className={`mt-1 w-full rounded-xl border px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-[#2457A7] focus:ring-offset-1 ${
+                    className={`mt-1 w-full rounded-xl border px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-1 ${
                       errors.email ? 'border-red-400' : 'border-gray-300'
                     }`}
                     placeholder="your@email.com"
@@ -130,7 +130,7 @@ export default function ContactForm() {
                     type="tel"
                     value={form.phone}
                     onChange={handleChange}
-                    className={`mt-1 w-full rounded-xl border px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-[#2457A7] focus:ring-offset-1 ${
+                    className={`mt-1 w-full rounded-xl border px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-1 ${
                       errors.phone ? 'border-red-400' : 'border-gray-300'
                     }`}
                     placeholder="+91 98765 43210"
@@ -148,7 +148,7 @@ export default function ContactForm() {
                     name="subject"
                     value={form.subject}
                     onChange={handleChange}
-                    className={`mt-1 w-full rounded-xl border px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-[#2457A7] focus:ring-offset-1 ${
+                    className={`mt-1 w-full rounded-xl border px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-1 ${
                       errors.subject ? 'border-red-400' : 'border-gray-300'
                     }`}
                   >
@@ -173,7 +173,7 @@ export default function ContactForm() {
                     rows={4}
                     value={form.message}
                     onChange={handleChange}
-                    className={`mt-1 w-full rounded-xl border px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-[#2457A7] focus:ring-offset-1 ${
+                    className={`mt-1 w-full rounded-xl border px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-1 ${
                       errors.message ? 'border-red-400' : 'border-gray-300'
                     }`}
                     placeholder="Your message..."
@@ -184,7 +184,7 @@ export default function ContactForm() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-xl bg-[#2457A7] px-6 py-4 font-semibold text-white shadow-md transition hover:bg-[#1B93D1] focus:outline-none focus:ring-2 focus:ring-[#2457A7] focus:ring-offset-2"
+                  className="w-full rounded-xl bg-[var(--color-accent)] px-6 py-4 font-semibold text-white shadow-md transition hover:bg-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2"
                 >
                   Submit
                 </button>
@@ -197,12 +197,12 @@ export default function ContactForm() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-[#94DCF2]/40 bg-[#f8fbff] p-6 shadow-lg sm:p-8"
+            className="rounded-2xl border border-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)] bg-[#f8fbff] p-6 shadow-lg sm:p-8"
           >
-            <h3 className="text-xl font-bold text-[#2457A7]">School Contact Details</h3>
+            <h3 className="text-xl font-bold text-gradient">School Contact Details</h3>
             <ul className="mt-6 space-y-4">
               <li className="flex gap-3">
-                <HiLocationMarker className="h-6 w-6 shrink-0 text-[#2457A7]" />
+                <HiLocationMarker className="h-6 w-6 shrink-0 text-[var(--color-accent)]" />
                 <div>
                   <p className="font-medium text-gray-800">Address</p>
                   <p className="text-gray-600">
@@ -213,21 +213,21 @@ export default function ContactForm() {
                 </div>
               </li>
               <li className="flex gap-3">
-                <HiPhone className="h-6 w-6 shrink-0 text-[#2457A7]" />
+                <HiPhone className="h-6 w-6 shrink-0 text-[var(--color-accent)]" />
                 <div>
                   <p className="font-medium text-gray-800">Phone</p>
                   <p className="text-gray-600">+91 8152 8152 81</p>
                 </div>
               </li>
               <li className="flex gap-3">
-                <HiMail className="h-6 w-6 shrink-0 text-[#2457A7]" />
+                <HiMail className="h-6 w-6 shrink-0 text-[var(--color-accent)]" />
                 <div>
                   <p className="font-medium text-gray-800">Email</p>
                   <p className="text-gray-600">info@treasureilandcbseschool.com</p>
                 </div>
               </li>
               <li className="flex gap-3">
-                <HiClock className="h-6 w-6 shrink-0 text-[#2457A7]" />
+                <HiClock className="h-6 w-6 shrink-0 text-[var(--color-accent)]" />
                 <div>
                   <p className="font-medium text-gray-800">Office Hours</p>
                   <p className="text-gray-600">
@@ -238,8 +238,8 @@ export default function ContactForm() {
                 </div>
               </li>
             </ul>
-            <div className="mt-8 overflow-hidden rounded-xl border border-[#94DCF2]/40 bg-gray-100 shadow-inner">
-              <p className="bg-[#2457A7]/10 px-4 py-2 text-center text-sm font-medium text-[#2457A7]">
+            <div className="mt-8 overflow-hidden rounded-xl border border-[color:color-mix(in_srgb,var(--color-accent)_40%,transparent)] bg-gray-100 shadow-inner">
+              <p className="bg-[color:color-mix(in_srgb,var(--color-accent)_12%,white)] px-4 py-2 text-center text-sm font-medium text-[var(--color-primary)]">
                 Map preview – see full map below
               </p>
               <div className="flex h-40 items-center justify-center text-gray-400">

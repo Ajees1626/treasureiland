@@ -8,7 +8,7 @@ export default function TeachingCTA() {
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(135deg, #2457A7 0%, #1B93D1 40%, #3CB5E5 100%)',
+            'linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 50%, var(--color-gold) 100%)',
         }}
       />
       <div
@@ -18,14 +18,14 @@ export default function TeachingCTA() {
         }}
       />
       <div className="absolute -left-40 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-white/10 blur-3xl" />
-      <div className="absolute -right-40 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[#94DCF2]/20 blur-3xl" />
+      <div className="absolute -right-40 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[color:color-mix(in_srgb,var(--color-accent)_20%,transparent)] blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-sm font-semibold uppercase tracking-[0.2em] text-[#94DCF2]"
+          className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-gold)]"
         >
           Take the Next Step
         </motion.p>
@@ -34,7 +34,7 @@ export default function TeachingCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
+          className="mt-3 text-3xl font-bold tracking-tight text-gradient-light sm:text-4xl lg:text-5xl"
         >
           Empowering Students for a Brighter Tomorrow
         </motion.h2>
@@ -56,7 +56,7 @@ export default function TeachingCTA() {
         >
           <Link
             to="/admissions"
-            className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-[#2457A7] shadow-xl transition hover:bg-[#94DCF2] hover:text-[#2457A7] hover:shadow-2xl"
+            className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-[var(--color-primary)] shadow-xl transition hover:bg-[var(--color-gold)] hover:text-[var(--color-primary)] hover:shadow-2xl"
           >
             Apply Now
             <span className="transition transform group-hover:translate-x-1">→</span>

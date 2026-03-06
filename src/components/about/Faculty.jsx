@@ -43,8 +43,8 @@ export default function Faculty() {
     <section className="relative py-28 bg-gradient-to-b from-white to-[#f5f9ff] overflow-hidden">
 
       {/* Background Blur Shapes */}
-      <div className="absolute -top-40 left-0 w-[400px] h-[400px] bg-[#1B93D1]/10 rounded-full blur-[150px]"></div>
-      <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-[#2457A7]/10 rounded-full blur-[150px]"></div>
+      <div className="absolute -top-40 left-0 w-[400px] h-[400px] bg-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)] rounded-full blur-[150px]"></div>
+      <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-[color:color-mix(in_srgb,var(--color-accent)_10%,transparent)] rounded-full blur-[150px]"></div>
 
       <motion.div
         variants={container}
@@ -56,11 +56,11 @@ export default function Faculty() {
 
         {/* Heading */}
         <motion.div variants={item} className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#2457A7]">
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient">
             Our Leadership & Faculty
           </h2>
 
-          <div className="mx-auto mt-4 w-24 h-[4px] bg-[#1B93D1] rounded-full"></div>
+          <div className="mx-auto mt-4 w-24 h-[4px] bg-[var(--color-gold)] rounded-full"></div>
 
           <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
             Our experienced educators and leaders guide students with passion,
@@ -93,7 +93,7 @@ export default function Faculty() {
               {/* Content */}
               <div className="absolute bottom-0 p-6 text-white">
 
-                <h3 className="text-xl font-semibold">
+                <h3 className="text-xl font-semibold text-gradient">
                   {person.name}
                 </h3>
 
