@@ -56,13 +56,13 @@ export default function CurricularActivities() {
   }
 
   return (
-    <section className="relative py-14 sm:py-20 md:py-24 lg:py-28 overflow-hidden bg-gradient-to-b from-white to-[#f4f8ff]" aria-labelledby="curricular-heading">
+    <section className="relative py-12 sm:py-20 md:py-24 lg:py-28 overflow-hidden bg-gradient-to-b from-white to-[#f4f8ff]" aria-labelledby="curricular-heading">
 
-      {/* Background Blur Effects */}
-      <div className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-[color:color-mix(in_srgb,var(--color-accent)_20%,transparent)] blur-[120px] rounded-full" aria-hidden="true"></div>
-      <div className="absolute bottom-10 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-[color:color-mix(in_srgb,var(--color-accent)_20%,transparent)] blur-[120px] rounded-full" aria-hidden="true"></div>
+      {/* Background Blur Effects - smaller on mobile */}
+      <div className="absolute top-16 left-4 sm:top-20 sm:left-10 w-40 h-40 sm:w-72 sm:h-72 bg-[color:color-mix(in_srgb,var(--color-accent)_20%,transparent)] blur-[100px] sm:blur-[120px] rounded-full" aria-hidden="true"></div>
+      <div className="absolute bottom-8 right-4 sm:bottom-10 sm:right-10 w-40 h-40 sm:w-72 sm:h-72 bg-[color:color-mix(in_srgb,var(--color-accent)_20%,transparent)] blur-[100px] sm:blur-[120px] rounded-full" aria-hidden="true"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative">
 
         {/* Section Header */}
         <motion.div
@@ -70,15 +70,15 @@ export default function CurricularActivities() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={transitionLite}
           viewport={viewportLite}
-          className="text-center mb-10 sm:mb-14 md:mb-16"
+          className="text-center mb-8 sm:mb-10 md:mb-14 lg:mb-16"
         >
-          <h2 id="curricular-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gradient">
+          <h2 id="curricular-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gradient">
             Curricular Activities
           </h2>
 
-          <div className="mx-auto mt-4 w-20 h-[4px] bg-[var(--color-gold)] rounded-full"></div>
+          <div className="mx-auto mt-3 sm:mt-4 w-16 sm:w-20 h-[3px] sm:h-[4px] bg-[var(--color-gold)] rounded-full"></div>
 
-          <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-gray-600 text-sm sm:text-base lg:text-lg">
+          <p className="mt-3 sm:mt-4 md:mt-6 max-w-2xl mx-auto text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg px-1">
             Learning goes beyond classrooms. Our students participate in creative,
             athletic and leadership programs that shape their future.
           </p>
@@ -93,63 +93,62 @@ export default function CurricularActivities() {
           className="relative"
         >
 
-          {/* Left Arrow - hidden on small screens, slider dots used instead */}
+          {/* Arrows: hidden on mobile (use dots + swipe), visible from sm */}
           <button
             onClick={() => sliderRef.current?.slickPrev()}
             aria-label="Previous slide"
-            className="absolute left-0 sm:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl p-2 sm:p-3 rounded-full hover:bg-[var(--color-primary)] hover:text-white transition"
+            className="hidden sm:flex absolute left-0 sm:-left-2 md:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl p-2 md:p-3 rounded-full hover:bg-[var(--color-primary)] hover:text-white transition touch-manipulation"
           >
-            <HiChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            <HiChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
-          {/* Right Arrow */}
           <button
             onClick={() => sliderRef.current?.slickNext()}
             aria-label="Next slide"
-            className="absolute right-0 sm:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl p-2 sm:p-3 rounded-full hover:bg-[var(--color-primary)] hover:text-white transition"
+            className="hidden sm:flex absolute right-0 sm:-right-2 md:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl p-2 md:p-3 rounded-full hover:bg-[var(--color-primary)] hover:text-white transition touch-manipulation"
           >
-            <HiChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            <HiChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
           <Slider ref={sliderRef} {...settings}>
 
             {activities.map((item, i) => (
 
-              <div key={i} className="px-4">
+              <div key={i} className="px-2 sm:px-3 md:px-4">
 
                 <motion.div
-                  initial={{ opacity: 0, y: 60 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.2 }}
+                  transition={{ delay: i * 0.15 }}
                   viewport={{ once: true }}
-                  className="group relative rounded-3xl overflow-hidden shadow-xl cursor-pointer"
+                  className="group relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl cursor-pointer"
                 >
 
                   {/* Image */}
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-[260px] sm:h-[300px] md:h-[340px] lg:h-[360px] w-full object-cover transition duration-700 group-hover:scale-110"
+                    className="h-[220px] sm:h-[260px] md:h-[300px] lg:h-[340px] xl:h-[360px] w-full object-cover transition duration-700 group-hover:scale-110"
                   />
 
                   {/* Overlay Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" aria-hidden="true" />
 
                   {/* Glass Card Content */}
-                  <div className="absolute bottom-0 p-6 text-white backdrop-blur-md">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 text-white backdrop-blur-md">
 
-                    <h3 className="text-2xl font-semibold text-gradient mb-2">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gradient mb-1 sm:mb-2">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-gray-200 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-200 leading-relaxed line-clamp-2 sm:line-clamp-none">
                       {item.desc}
                     </p>
 
                   </div>
 
                   {/* Hover Glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 border-2 border-[var(--color-gold)] rounded-3xl"></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 border-2 border-[var(--color-gold)] rounded-2xl sm:rounded-3xl pointer-events-none" aria-hidden="true" />
 
                 </motion.div>
 
